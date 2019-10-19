@@ -1,0 +1,82 @@
+@import "libs/reset.scss";
+@import "libs/responsive.scss";
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Poppins", sans-serif;
+  color: #777;
+}
+
+/* ------------------- */
+/* Parallax and arrows */
+/* ------------------- */
+
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /**
+   * Default height
+   */
+  height: 950px;
+}
+
+.caption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  height: 50%;
+}
+
+.caption-top {
+  @extend .caption
+}
+
+.caption {
+  .border {
+    background-color: rgba(197, 189, 189, 0.144);
+    padding: 8px;
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 10px;
+  }
+}
+
+@media #{$medium-down} {
+  .caption {
+    height: 20%;  
+  }
+
+  .caption .border,
+  .caption-top .border {
+    padding: 2px;
+  }
+  .fa-angle-down,
+  .fa-angle-up {
+    font-size: 0.9em;
+  }
+  .text {
+    padding: 50px 30px;
+    font-size: 0.9em;
+  }
+}
+

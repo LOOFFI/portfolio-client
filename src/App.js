@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+
+
+import React, { Component } from 'react';
+import {Switch,Route} from 'react-router-dom'
+import NavBar from './components/NavBar.js';
+import NotFound from './components/NotFound';
+import Footer from './components/Footer.js';
+import HomePage from './components/HomePage.js';
+
+
+
+
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentUser: null
+    };
+  }
+
+
+  render() {
+
+    const { currentUser } = this.state;
+    
+    return (
+    <main>
+      <header>
+          {/* <NavBar/>  */}
       </header>
-    </div>
-  );
+          
+      
+            <Switch>
+              <Route exact path='/' component={HomePage}/>
+              <Route path="/notfound" component={ NotFound }/>
+            </Switch>
+      
+
+      {/* <Footer/> */}
+      
+    </main>
+    );
+  }
 }
 
 export default App;

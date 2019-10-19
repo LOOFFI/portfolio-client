@@ -1,0 +1,117 @@
+/*! minireset.css v0.0.5 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+  text-align: left;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Poppins", sans-serif;
+  color: #777;
+}
+
+/* ------------------- */
+/* Parallax and arrows */
+/* ------------------- */
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /**
+   * Default height
+   */
+  height: 950px;
+}
+
+.caption, .caption-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 50%;
+}
+
+.caption .border, .caption-top .border {
+  background-color: rgba(197, 189, 189, 0.144);
+  padding: 8px;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  .caption, .caption-top {
+    height: 20%;
+  }
+
+  .caption .border,
+.caption-top .border {
+    padding: 2px;
+  }
+
+  .fa-angle-down,
+.fa-angle-up {
+    font-size: 0.9em;
+  }
+
+  .text {
+    padding: 50px 30px;
+    font-size: 0.9em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
