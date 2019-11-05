@@ -1,7 +1,12 @@
 @import "libs/reset.scss";
+@import "libs/mixins.scss";
 @import "libs/responsive.scss";
 
-*{
+$main-color: rgb(160, 156, 149);
+$second-color: rgb(197, 189, 189);
+$effect-color:  rgba(248, 185, 83, 0.534);
+
+* {
   padding: 0;
   margin: 0;
 }
@@ -11,27 +16,35 @@ html {
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Poppins", sans-serif;
-  color: #777;
+  color: $main-color;
 }
 
-/* ------------------- */
-/* Parallax and arrows */
-/* ------------------- */
-
-.parallax {
-  position: relative;
-  background-attachment: fixed;
-  background-position: center 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  /**
-   * Default height
-   */
-  height: 950px;
+h1 {
+  font-size: 2em;
+  text-align: center;
+  justify-content: center;
 }
 
-.caption {
+nav {
+  width: 100vw;
+  height: 100vh;
+  
+}
+
+
+
+.arrow-fixed {
+  position: fixed;
+  bottom: 80px;
+  right: 50px;
+}
+
+#main-title {
+  display: flex;
+  justify-content: center;
+}
+
+.motion {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,43 +53,257 @@ html {
   -ms-flex-pack: center;
   justify-content: center;
 
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
 
-  height: 50%;
-}
+  height: 80vh;
 
-.caption-top {
-  @extend .caption
-}
-
-.caption {
   .border {
-    background-color: rgba(197, 189, 189, 0.144);
+    background-color: rgba($second-color, 0.144);
+    border-radius: 5px;
     padding: 8px;
     color: #fff;
     font-size: 25px;
     letter-spacing: 10px;
+    transition: background-color 2s;
+
+    &:hover {
+      background-color: rgba($second-color, 0.8);
+    }
+
+    & > .fa-angle-down,
+    & > .fa-angle-up {
+      padding: 8px 18px 0px 26px;
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media #{$large-up} {
+  .navbar-nav {
+    z-index: 6;
+    margin: 40vh auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: auto;
+    top: 0;
+    left: 0;
   }
 }
 
 @media #{$medium-down} {
-  .caption {
-    height: 20%;  
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 20vh;
   }
-
-  .caption .border,
-  .caption-top .border {
-    padding: 2px;
-  }
-  .fa-angle-down,
-  .fa-angle-up {
-    font-size: 0.9em;
-  }
-  .text {
-    padding: 50px 30px;
-    font-size: 0.9em;
+  .nav-item {
+    margin-top: 0%;
+    padding: 0%;
+    margin: 2em;
+    @include rotate(-28deg);
+    width: 8em;
   }
 }
 
+@media #{$medium-up} {
+  .nav-item {
+    margin-top: 0%;
+    padding: 0%;
+    @include rotate(-38deg);
+    width: 8em;
+  }
+}
+
+.menu-icon {
+  
+  position: relative;
+  width: 54px;
+  height: 54px;
+  @include transition;
+  animation: antirotation 0.1s;
+
+   & span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translateX(-50%) translateY(-50%));
+
+    display: block;
+    width: 22px;
+    height: 2px;
+
+    background-color: $main-color;
+
+    -webkit-transition: background 0.5s;
+
+    transition: background 0.5s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include translation(-6px);
+
+      display: block;
+      width: 22px;
+      height: 2px;
+
+      background-color: $main-color;
+
+      @include transition;
+    }
+
+    &::after {
+      @include translation(6px);
+    }
+  }
+
+  &:hover {
+    
+    span::before {
+    @include translation(-8px);
+   }
+
+    span::after {
+    @include translation(8px);
+   }
+  }
+
+
+  &.is-opened {
+
+    
+    animation: rotation 0.5s;
+
+    span {
+      background: transparent;
+      
+    }
+  
+    span::before {
+      @include rotation(0, 45deg);
+    }
+  
+    span::after {
+      @include rotation(0, -45deg);
+    }
+  } 
+
+  
+  
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes antirotation {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+.open {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.nav-min {
+  font-size: 1.5em;
+} 
+
+.hover-effect {
+
+  width: 0%;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+  /* height:1px; */
+  /*override au cas par cas sur bottom et couleur de ligne*/
+  bottom: -0.5px;
+  border-bottom: 1.5px solid rgba($effect-color, 0.534);
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+
+  &:hover {
+    
+    max-width: -webkit-max-content;
+  
+  max-width: -moz-max-content;
+  
+  max-width: max-content;
+  width: 100%;
+  }
+}
+
+a {
+  &.nav-min {
+    color: rgba($main-color, 0.534);
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      color: $effect-color;
+    }
+  }
+
+  
+
+}
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+
+@-webkit-keyframes fadein { /* sur Safari et Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+
+#first-nav {
+  @include thefadein(2s);
+}
+
+#second-nav {
+  @include thefadein(2.5s);
+}
+
+#third-nav {
+  @include thefadein(3s);
+}
+
+#fourth-nav {
+  @include thefadein(3.5s);
+}

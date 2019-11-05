@@ -54,64 +54,279 @@ html {
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Poppins", sans-serif;
-  color: #777;
+  color: #a09c95;
 }
 
-/* ------------------- */
-/* Parallax and arrows */
-/* ------------------- */
-.parallax {
-  position: relative;
-  background-attachment: fixed;
-  background-position: center 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /**
-   * Default height
-   */
-  height: 950px;
+h1 {
+  font-size: 2em;
+  text-align: center;
+  justify-content: center;
 }
 
-.caption, .caption-top {
+nav {
+  width: 100vw;
+  height: 100vh;
+}
+
+.arrow-fixed {
+  position: fixed;
+  bottom: 80px;
+  right: 50px;
+}
+
+#main-title {
+  display: flex;
+  justify-content: center;
+}
+
+.motion {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 50%;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  height: 80vh;
 }
-
-.caption .border, .caption-top .border {
+.motion .border {
   background-color: rgba(197, 189, 189, 0.144);
+  border-radius: 5px;
   padding: 8px;
   color: #fff;
   font-size: 25px;
   letter-spacing: 10px;
+  transition: background-color 2s;
+}
+.motion .border:hover {
+  background-color: rgba(197, 189, 189, 0.8);
+}
+.motion .border > .fa-angle-down, .motion .border > .fa-angle-up {
+  padding: 8px 18px 0px 26px;
+  font-size: 1.5em;
 }
 
-@media only screen and (max-device-width: 1024px) {
-  .caption, .caption-top {
-    height: 20%;
+@media only screen and (min-width: 1024px) {
+  .navbar-nav {
+    z-index: 6;
+    margin: 40vh auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 20vh;
   }
 
-  .caption .border,
-.caption-top .border {
-    padding: 2px;
+  .nav-item {
+    margin-top: 0%;
+    padding: 0%;
+    margin: 2em;
+    -webkit-transform: rotate(-28deg);
+    transform: rotate(-28deg);
+    width: 8em;
   }
+}
+@media only screen and (min-width: 768px) {
+  .nav-item {
+    margin-top: 0%;
+    padding: 0%;
+    -webkit-transform: rotate(-38deg);
+    transform: rotate(-38deg);
+    width: 8em;
+  }
+}
+.menu-icon {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
+  animation: antirotation 0.1s;
+}
+.menu-icon span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #a09c95;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+}
+.menu-icon span::before, .menu-icon span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(-6px);
+  transform: translateY(-6px);
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #a09c95;
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
+}
+.menu-icon span::after {
+  -webkit-transform: translateY(6px);
+  transform: translateY(6px);
+}
+.menu-icon:hover span::before {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+.menu-icon:hover span::after {
+  -webkit-transform: translateY(8px);
+  transform: translateY(8px);
+}
+.menu-icon.is-opened {
+  animation: rotation 0.5s;
+}
+.menu-icon.is-opened span {
+  background: transparent;
+}
+.menu-icon.is-opened span::before {
+  -webkit-transform: translateY(0) rotate(45deg);
+  transform: translateY(0) rotate(45deg);
+}
+.menu-icon.is-opened span::after {
+  -webkit-transform: translateY(0) rotate(-45deg);
+  transform: translateY(0) rotate(-45deg);
+}
 
-  .fa-angle-down,
-.fa-angle-up {
-    font-size: 0.9em;
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes antirotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+.open {
+  background-color: rgba(0, 0, 0, 0.9);
+}
 
-  .text {
-    padding: 50px 30px;
-    font-size: 0.9em;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-min {
+  font-size: 1.5em;
+}
+
+.hover-effect {
+  width: 0%;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+  /* height:1px; */
+  /*override au cas par cas sur bottom et couleur de ligne*/
+  bottom: -0.5px;
+  border-bottom: 1.5px solid rgba(248, 185, 83, 0.534);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hover-effect:hover {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  width: 100%;
+}
+
+a.nav-min {
+  color: rgba(160, 156, 149, 0.534);
+  text-decoration: none;
+  white-space: nowrap;
+}
+a.nav-min:hover {
+  color: rgba(248, 185, 83, 0.534);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* sur Safari et Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#first-nav {
+  animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  /* Firefox */
+  -webkit-animation: fadein 2s;
+  /* Safari et Chrome */
+  -o-animation: fadein 2s;
+  /* Opera */
+}
+
+#second-nav {
+  animation: fadein 2.5s;
+  -moz-animation: fadein 2.5s;
+  /* Firefox */
+  -webkit-animation: fadein 2.5s;
+  /* Safari et Chrome */
+  -o-animation: fadein 2.5s;
+  /* Opera */
+}
+
+#third-nav {
+  animation: fadein 3s;
+  -moz-animation: fadein 3s;
+  /* Firefox */
+  -webkit-animation: fadein 3s;
+  /* Safari et Chrome */
+  -o-animation: fadein 3s;
+  /* Opera */
+}
+
+#fourth-nav {
+  animation: fadein 3.5s;
+  -moz-animation: fadein 3.5s;
+  /* Firefox */
+  -webkit-animation: fadein 3.5s;
+  /* Safari et Chrome */
+  -o-animation: fadein 3.5s;
+  /* Opera */
 }
 
 /*# sourceMappingURL=style.css.map */

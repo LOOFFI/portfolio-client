@@ -1,1 +1,7 @@
-$medium-down: "only screen and (max-device-width: 1024px)";
+$medium: 768px!default;
+$large: 1024px!default;
+
+$medium-up: "only screen and (min-width: #{$medium})";
+$medium-down: "only screen and (max-width: #{$medium})";
+$large-up: "only screen and (min-width: #{$large})";
+$large-down: "only screen and (max-width: #{$large})";

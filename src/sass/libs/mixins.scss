@@ -1,0 +1,33 @@
+@mixin transition($delay: 2s) {
+  -webkit-transition: -webkit-transform $delay;
+
+  transition: -webkit-transform $delay;
+
+  transition: transform $delay;
+
+  transition: transform $delay, -webkit-transform $delay;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  transform: $transform;
+}
+
+@mixin translation($translation: 6px) {
+   @include transform(translateY($translation));
+}
+
+@mixin rotate($rotation: 0deg) {
+  @include transform(rotate($rotation));
+}
+
+@mixin rotation($translation: 0, $rotation: 45deg) {
+  @include transform(translateY($translation) rotate($rotation));
+}
+
+@mixin thefadein($duration: 2s) {
+  animation: fadein $duration;
+  -moz-animation: fadein $duration; /* Firefox */
+  -webkit-animation: fadein $duration; /* Safari et Chrome */
+  -o-animation: fadein $duration; /* Opera */
+}
