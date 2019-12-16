@@ -1,10 +1,13 @@
 @import "libs/reset.scss";
 @import "libs/mixins.scss";
 @import "libs/responsive.scss";
+@import "card.scss";
 
 $main-color: rgb(160, 156, 149);
 $second-color: rgb(197, 189, 189);
 $effect-color:  rgba(248, 185, 83, 0.534);
+
+
 
 * {
   padding: 0;
@@ -28,9 +31,9 @@ h1 {
 nav {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   
 }
-
 
 
 .arrow-fixed {
@@ -57,7 +60,7 @@ nav {
   -ms-flex-align: flex-end;
   align-items: flex-end;
 
-  height: 80vh;
+  height: 70%;
 
   .border {
     background-color: rgba($second-color, 0.144);
@@ -80,7 +83,24 @@ nav {
   }
 }
 
-@media #{$large-up} {
+
+
+@media #{$medium-down} {
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 5vh 20vw;
+  }
+  .nav-item {
+    margin-top: 0%;
+    padding: 0%;
+    margin: 2em;
+    @include rotate(-28deg);
+    width: 13em;
+  }
+}
+
+@media #{$medium-up} {
   .navbar-nav {
     z-index: 6;
     margin: 40vh auto;
@@ -92,29 +112,11 @@ nav {
     top: 0;
     left: 0;
   }
-}
-
-@media #{$medium-down} {
-  .navbar-nav {
-    display: flex;
-    flex-direction: column;
-    margin: 20vh;
-  }
-  .nav-item {
-    margin-top: 0%;
-    padding: 0%;
-    margin: 2em;
-    @include rotate(-28deg);
-    width: 8em;
-  }
-}
-
-@media #{$medium-up} {
   .nav-item {
     margin-top: 0%;
     padding: 0%;
     @include rotate(-38deg);
-    width: 8em;
+    width: 13em;
   }
 }
 
@@ -219,14 +221,17 @@ nav {
 
 .open {
   background-color: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  overflow: hidden;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 15vh;
+  overflow: hidden;
 }
-
 
 
 .nav-min {
@@ -251,21 +256,22 @@ nav {
   &:hover {
     
     max-width: -webkit-max-content;
-  
-  max-width: -moz-max-content;
-  
-  max-width: max-content;
-  width: 100%;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    width: 100%;
   }
 }
 
 a {
   &.nav-min {
+
     color: rgba($main-color, 0.534);
     text-decoration: none;
     white-space: nowrap;
+    transition: color 1s ease-in-out;
 
     &:hover {
+
       color: $effect-color;
     }
   }
@@ -293,17 +299,26 @@ a {
 }
 
 #first-nav {
-  @include thefadein(2s);
-}
-
-#second-nav {
   @include thefadein(2.5s);
 }
 
+#second-nav {
+  @include thefadein(3.5s);
+}
+
 #third-nav {
-  @include thefadein(3s);
+  @include thefadein(4.5s);
 }
 
 #fourth-nav {
-  @include thefadein(3.5s);
+  @include thefadein(5.5s);
 }
+
+.item {
+  background-color: $card-bg;
+}
+
+.text-container {
+  padding: 20px;
+}
+

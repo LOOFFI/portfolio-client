@@ -44,6 +44,80 @@ td, th {
   text-align: left;
 }
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: initial;
+  margin: 0 15%;
+  padding: 0 0 0 3%;
+}
+
+@media only screen and (min-width: 1700px) {
+  .card-container {
+    padding: 0 0 0 8%;
+  }
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #f5efef;
+  background-clip: border-box;
+  border-style: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  width: 200px;
+  margin: 5% 3%;
+  border-radius: 10px;
+  transition: box-shadow 0.45s ease-in-out;
+}
+.card:hover {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
+}
+.card h2 {
+  font-size: 1.5em;
+  text-align: center;
+  justify-content: center;
+  z-index: 3;
+}
+.card .card-text {
+  position: absolute;
+  left: 6px;
+  bottom: 10px;
+  padding: 2% 3%;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+.card .radius {
+  border-radius: 10px;
+}
+
+.card-img {
+  background-size: cover;
+  width: auto;
+  height: 300px;
+}
+
+.wprock-img-zoom-hover .wprock-img-zoom {
+  overflow: hidden;
+  position: relative;
+}
+.wprock-img-zoom-hover .wprock-img-zoom .card-img {
+  max-width: 100%;
+  transition: all 0.8s;
+  max-height: 300px;
+}
+.wprock-img-zoom-hover .wprock-img-zoom * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.wprock-img-zoom-hover:hover .wprock-img-zoom .card-img {
+  transform: scale(1.16);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -66,6 +140,7 @@ h1 {
 nav {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .arrow-fixed {
@@ -89,7 +164,7 @@ nav {
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
   align-items: flex-end;
-  height: 80vh;
+  height: 70%;
 }
 .motion .border {
   background-color: rgba(197, 189, 189, 0.144);
@@ -108,7 +183,23 @@ nav {
   font-size: 1.5em;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 768px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 5vh 20vw;
+  }
+
+  .nav-item {
+    margin-top: 0%;
+    padding: 0%;
+    margin: 2em;
+    -webkit-transform: rotate(-28deg);
+    transform: rotate(-28deg);
+    width: 13em;
+  }
+}
+@media only screen and (min-width: 768px) {
   .navbar-nav {
     z-index: 6;
     margin: 40vh auto;
@@ -120,30 +211,13 @@ nav {
     top: 0;
     left: 0;
   }
-}
-@media only screen and (max-width: 768px) {
-  .navbar-nav {
-    display: flex;
-    flex-direction: column;
-    margin: 20vh;
-  }
 
-  .nav-item {
-    margin-top: 0%;
-    padding: 0%;
-    margin: 2em;
-    -webkit-transform: rotate(-28deg);
-    transform: rotate(-28deg);
-    width: 8em;
-  }
-}
-@media only screen and (min-width: 768px) {
   .nav-item {
     margin-top: 0%;
     padding: 0%;
     -webkit-transform: rotate(-38deg);
     transform: rotate(-38deg);
-    width: 8em;
+    width: 13em;
   }
 }
 .menu-icon {
@@ -230,12 +304,16 @@ nav {
 }
 .open {
   background-color: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  overflow: hidden;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 15vh;
+  overflow: hidden;
 }
 
 .nav-min {
@@ -267,6 +345,7 @@ a.nav-min {
   color: rgba(160, 156, 149, 0.534);
   text-decoration: none;
   white-space: nowrap;
+  transition: color 1s ease-in-out;
 }
 a.nav-min:hover {
   color: rgba(248, 185, 83, 0.534);
@@ -290,16 +369,6 @@ a.nav-min:hover {
   }
 }
 #first-nav {
-  animation: fadein 2s;
-  -moz-animation: fadein 2s;
-  /* Firefox */
-  -webkit-animation: fadein 2s;
-  /* Safari et Chrome */
-  -o-animation: fadein 2s;
-  /* Opera */
-}
-
-#second-nav {
   animation: fadein 2.5s;
   -moz-animation: fadein 2.5s;
   /* Firefox */
@@ -309,17 +378,7 @@ a.nav-min:hover {
   /* Opera */
 }
 
-#third-nav {
-  animation: fadein 3s;
-  -moz-animation: fadein 3s;
-  /* Firefox */
-  -webkit-animation: fadein 3s;
-  /* Safari et Chrome */
-  -o-animation: fadein 3s;
-  /* Opera */
-}
-
-#fourth-nav {
+#second-nav {
   animation: fadein 3.5s;
   -moz-animation: fadein 3.5s;
   /* Firefox */
@@ -327,6 +386,34 @@ a.nav-min:hover {
   /* Safari et Chrome */
   -o-animation: fadein 3.5s;
   /* Opera */
+}
+
+#third-nav {
+  animation: fadein 4.5s;
+  -moz-animation: fadein 4.5s;
+  /* Firefox */
+  -webkit-animation: fadein 4.5s;
+  /* Safari et Chrome */
+  -o-animation: fadein 4.5s;
+  /* Opera */
+}
+
+#fourth-nav {
+  animation: fadein 5.5s;
+  -moz-animation: fadein 5.5s;
+  /* Firefox */
+  -webkit-animation: fadein 5.5s;
+  /* Safari et Chrome */
+  -o-animation: fadein 5.5s;
+  /* Opera */
+}
+
+.item {
+  background-color: #f5efef;
+}
+
+.text-container {
+  padding: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

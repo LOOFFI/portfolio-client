@@ -1,0 +1,95 @@
+$card-bg: rgb(245, 239, 239);
+$card-border-color: rgb(219, 210, 210);
+$card-border-width: thin;
+$card-title: 1.5em;
+$card-width: 200px;
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: initial;
+  margin: 0 15%;
+  padding: 0 0 0 3%;
+  
+}
+
+@media #{$xlarge-up} {
+  .card-container {
+    padding: 0 0 0 8%;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: $card-bg;
+  background-clip: border-box;
+  // border: $card-border-width solid $card-border-color;
+  border-style: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  width: $card-width;
+  margin: 5% 3%;
+  border-radius: 10px;
+  transition: box-shadow .45s ease-in-out;
+
+  &:hover {
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.40);
+  }
+
+  & h2 {
+    font-size: $card-title;
+    
+    text-align: center;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  & .card-text {
+     position:absolute;
+     left:6px;
+     bottom:10px;
+     padding: 2% 3%;
+     color: white;
+     font-weight: bold;
+     text-decoration: none;
+  }
+
+
+  & .radius {
+    border-radius: 10px;
+  }
+}
+
+.card-img {
+  background-size: cover;
+  width: auto;
+  height: $card-width * 1.5;
+}
+
+.wprock-img-zoom-hover {
+  & .wprock-img-zoom {
+    overflow: hidden;
+    position: relative;
+    
+
+    & .card-img {
+      max-width: 100%;
+      transition: all 0.8s;
+      max-height: $card-width * 1.5;
+    }
+
+    & * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &:hover .wprock-img-zoom .card-img {
+    transform: scale(1.16);
+    
+  }
+}

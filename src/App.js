@@ -4,9 +4,7 @@
 
 import React, { Component } from 'react';
 import {Switch,Route} from 'react-router-dom'
-import NavBar from './components/NavBar.js';
 import NotFound from './components/NotFound';
-import Footer from './components/Footer.js';
 import HomePage from './components/HomePage.js';
 
 
@@ -29,10 +27,7 @@ class App extends Component {
     
     return (
     <main>
-      <header>
-          {/* <NavBar/>  */}
-      </header>
-          
+             
       
             <Switch>
               <Route exact path='/' component={HomePage}/>
@@ -40,8 +35,7 @@ class App extends Component {
             </Switch>
       
 
-      {/* <Footer/> */}
-      
+     
     </main>
     );
   }
