@@ -13,7 +13,7 @@ class Card extends React.Component {
     const divStyle2 = {
       borderRadius: '10px'
     }
-    const {title} = this.props;
+    const {title,link} = this.props;
 
     return ( 
       <li className="card">
@@ -24,9 +24,9 @@ class Card extends React.Component {
               </div>
                 
             </div>
-            <a href='#' className="card-text">
+            <a href={link} target="_blank" rel="noopener noreferrer" className="card-text">
               <h2>{title}</h2>   
-              On va mettre un effet de zoom 
+              GO 
             </a>
           </div>
                  

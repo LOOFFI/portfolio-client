@@ -15,7 +15,7 @@ class Motion extends React.Component {
   render() { 
     return (
       <div className="motion">
-         <span className="border" onClick={this.handleClick}><i className="fas fa-angle-down"></i></span>
+         <span className="my-border" onClick={this.handleClick}><i className="fas fa-angle-down"></i></span>
       </div>
     );
   }

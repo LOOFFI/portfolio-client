@@ -32,17 +32,17 @@ class NavBar extends React.Component {
            </div>
 
            <nav>
-             <ul className="navbar-nav">
-               <li className="nav-item" id="first-nav">
+             <ul className="my-navbar-nav">
+               <li className="my-nav-item" id="first-nav">
                  <div className="hover-effect"><a className="nav-min" href="https://iron-proj2.herokuapp.com/posts" target="_blank" rel="noopener noreferrer">Premier Projet</a></div>
                </li>
-               <li className="nav-item" id="second-nav">
+               <li className="my-nav-item" id="second-nav">
                  <div className="hover-effect"><a className="nav-min" href="https://appnap.herokuapp.com/" target="_blank" rel="noopener noreferrer">Deuxième Projet</a></div>
                </li>
-               <li className="nav-item" id="third-nav">
+               <li className="my-nav-item" id="third-nav">
                  <div className="hover-effect"><a className="nav-min" href="https://la-vigne-heureuse.herokuapp.com/" target="_blank" rel="noopener noreferrer">Troisième Projet</a></div>
                </li>
-               <li className="nav-item" id="fourth-nav">
+               <li className="my-nav-item" id="fourth-nav">
                  <div className="hover-effect"><a className="nav-min" href="https://la-vigne-heureuse.herokuapp.com/" target="_blank" rel="noopener noreferrer">Quatrième Projet</a></div>
                </li>
              </ul>

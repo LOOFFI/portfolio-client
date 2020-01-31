@@ -166,7 +166,7 @@ nav {
   align-items: flex-end;
   height: 70%;
 }
-.motion .border {
+.motion .my-border {
   background-color: rgba(197, 189, 189, 0.144);
   border-radius: 5px;
   padding: 8px;
@@ -175,22 +175,22 @@ nav {
   letter-spacing: 10px;
   transition: background-color 2s;
 }
-.motion .border:hover {
+.motion .my-border:hover {
   background-color: rgba(197, 189, 189, 0.8);
 }
-.motion .border > .fa-angle-down, .motion .border > .fa-angle-up {
+.motion .my-border > .fa-angle-down, .motion .my-border > .fa-angle-up {
   padding: 8px 18px 0px 26px;
   font-size: 1.5em;
 }
 
 @media only screen and (max-width: 768px) {
-  .navbar-nav {
+  .my-navbar-nav {
     display: flex;
     flex-direction: column;
     margin: 5vh 20vw;
   }
 
-  .nav-item {
+  .my-nav-item {
     margin-top: 0%;
     padding: 0%;
     margin: 2em;
@@ -200,7 +200,7 @@ nav {
   }
 }
 @media only screen and (min-width: 768px) {
-  .navbar-nav {
+  .my-navbar-nav {
     z-index: 6;
     margin: 40vh auto;
     display: flex;
@@ -212,7 +212,7 @@ nav {
     left: 0;
   }
 
-  .nav-item {
+  .my-nav-item {
     margin-top: 0%;
     padding: 0%;
     -webkit-transform: rotate(-38deg);
@@ -414,6 +414,10 @@ a.nav-min:hover {
 
 .text-container {
   padding: 20px;
+}
+
+.parallax-bg-effect {
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

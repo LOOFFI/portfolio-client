@@ -62,7 +62,7 @@ nav {
 
   height: 70%;
 
-  .border {
+  .my-border {
     background-color: rgba($second-color, 0.144);
     border-radius: 5px;
     padding: 8px;
@@ -86,12 +86,12 @@ nav {
 
 
 @media #{$medium-down} {
-  .navbar-nav {
+  .my-navbar-nav {
     display: flex;
     flex-direction: column;
     margin: 5vh 20vw;
   }
-  .nav-item {
+  .my-nav-item {
     margin-top: 0%;
     padding: 0%;
     margin: 2em;
@@ -101,7 +101,7 @@ nav {
 }
 
 @media #{$medium-up} {
-  .navbar-nav {
+  .my-navbar-nav {
     z-index: 6;
     margin: 40vh auto;
     display: flex;
@@ -112,7 +112,7 @@ nav {
     top: 0;
     left: 0;
   }
-  .nav-item {
+  .my-nav-item {
     margin-top: 0%;
     padding: 0%;
     @include rotate(-38deg);
@@ -322,3 +322,6 @@ a {
   padding: 20px;
 }
 
+.parallax-bg-effect {
+  border-radius: 10px;
+}
