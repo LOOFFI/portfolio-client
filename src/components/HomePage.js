@@ -31,7 +31,8 @@ class HomePage extends React.Component {
       show : false,
       scrollPos : 0,
       navbarOpen : false,
-      projectsArray : []
+      projectsArray : [],
+      loaderOpen : false
   }
   this.handleScroll = this.handleScroll.bind(this);
   this.scrollToTop = this.scrollToTop.bind(this);
@@ -95,9 +96,14 @@ isOpen(e) {
   });
 }
   
+loaderOpen() {
+  this.setState({
+    loaderOpen: !this.state.loaderOpen
+  })
+}
   render() {
 
-    const {image1, image2, image3, image4, image5, image6, image7, height, navbarOpen, projectsArray} = this.state;
+    const {image1, image2, image3, image4, image5, image6, image7, height, navbarOpen, projectsArray, loaderOpen} = this.state;
     
     console.log(projectsArray)
 
@@ -107,6 +113,24 @@ isOpen(e) {
             <NavBar navbarOpen={navbarOpen} onClick={() => this.isOpen()}/>
         </div>)
     }
+    
+    if (loaderOpen===true) {
+      return (
+        <div className="loader-open">
+          <aside className="">
+            <div class="gooey">
+              <span class="dot"></span>
+              <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      )
+    }
+    
     else {
     return (
         <div className="main">
@@ -196,7 +220,7 @@ isOpen(e) {
             <span onClick={() => this.scrollTo('third-title')}>
               <div style={{height}}>
                 <div style={insideStyles}>
-                    <ContactForm scrollToTop={this.scrollToTop}/>
+                    <ContactForm loaderOpen={e => this.loaderOpen(e)} scrollToTop={this.scrollToTop}/>
                 </div>
                 {/* <Motion onClick={() => this.scrollTo('third-title')}></Motion> */}
               </div>

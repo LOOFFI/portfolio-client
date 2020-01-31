@@ -2,6 +2,7 @@
 @import "libs/mixins.scss";
 @import "libs/responsive.scss";
 @import "card.scss";
+@import "loader.scss";
 
 $main-color: rgb(160, 156, 149);
 $second-color: rgb(197, 189, 189);
@@ -325,3 +326,5 @@ a {
 .parallax-bg-effect {
   border-radius: 10px;
 }
+
+

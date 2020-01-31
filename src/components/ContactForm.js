@@ -15,7 +15,8 @@ class ContactForm extends React.Component {
       email:"",
       message:"",
       isSubmitSuccess: false,
-      contactFormOpen: false
+      contactFormOpen: false,
+      loader: false
     }
   }
 
@@ -45,22 +46,25 @@ class ContactForm extends React.Component {
   }
 
   handleChange(e) {
-    this.props.scrollToTop()
+    this.props.loaderOpen()
   }
 
   handleSubmit(event) {
     event.preventDefault();
     console.log('envoi submit')
-
+    this.handleChange();
     axios.post("http://localhost:4000/api/contact", this.state)
       .then(response => {
       // console.log(response);
+      
       if (response.data.msg === 'success') {
         // alert("Votre message a bien été envoyé. Cliquez sur OK pour aller à l'accueil.");
         this.setState(
           {isSubmitSuccess: true,
-           contactFormOpen: false 
+           contactFormOpen: false,
+           loader: false 
           });
+        this.handleChange();
         this.props.scrollToTop();
       }
       else {
@@ -75,13 +79,13 @@ class ContactForm extends React.Component {
 
   render() { 
 
-    const {name,email,message,isSubmitSuccess,contactFormOpen} = this.state;
-    console.log('les props ', this.props);
+    const {name,email,message,isSubmitSuccess,contactFormOpen,loader} = this.state;
     
-
     if (!contactFormOpen) {
       return <Button onClick={e => this.showForm()}>Click here to contact me</Button>
     }
+
+    
 
     return ( 
       <main id="contact-position">
