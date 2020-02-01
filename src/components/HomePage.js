@@ -20,6 +20,9 @@ class HomePage extends React.Component {
   constructor(props) {
   super(props);
   this.state={
+      beginning : true,
+      c:0,
+      count:0,
       image1 : "https://images.unsplash.com/photo-1500806851969-7b469b45f3dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
       image2 : "https://images.unsplash.com/photo-1477093782505-e10aaeb27c6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       image3 : "https://images.unsplash.com/photo-1474226004578-62743874270f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
@@ -38,9 +41,12 @@ class HomePage extends React.Component {
   this.scrollToTop = this.scrollToTop.bind(this);
   this.scrollToBottom = this.scrollToBottom.bind(this);
   this.scrollTo = this.scrollTo.bind(this);
+  //this.firstLoading = this.firstLoading.bind(this);
 }
 
 componentDidMount() {
+  this.interval = setInterval(() => this.tick(),40);
+  //window.setInterval(this.firstLoading,5000);
   window.addEventListener("scroll", this.handleScroll);
   axios.get("http://localhost:4000/api/projects")
     .then(res => {
@@ -100,11 +106,45 @@ loaderOpen() {
     loaderOpen: !this.state.loaderOpen
   })
 }
+
+// firstLoading() {
+//   let {c,count} = this.state;
+//   this.setState({
+//     c:c++,
+//     count:count++,
+//     // beginning: false,
+//   })
+// }
+
+tick() {
+  
+  this.setState(state => ({
+    c:state.c+1,
+    count:state.count+1
+  }))
+  if (this.state.count===101) {
+    clearInterval(this.interval)
+    this.setState({
+      beginning:false
+    })
+  }
+}
+
   render() {
 
-    const {image1, image2, image3, image4, image5, image6, image7, height, navbarOpen, projectsArray, loaderOpen} = this.state;
+    const {c,beginning, image1, image2, image3, image4, image5, image6, image7, height, navbarOpen, projectsArray, loaderOpen} = this.state;
     
-    
+    if (beginning) {
+      return (
+        <div className="loading-page">
+          <div className="counter">
+            <p>loading</p>
+            <h1>{c}%</h1>
+            <hr style={{width:c+'%'}}/>
+          </div>
+        </div>
+      )
+    }
 
     if (navbarOpen===true) {
       return (
