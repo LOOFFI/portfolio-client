@@ -44,7 +44,6 @@ componentDidMount() {
   window.addEventListener("scroll", this.handleScroll);
   axios.get("http://localhost:4000/api/projects")
     .then(res => {
-      console.log(res);
       this.setState({projectsArray: res.data})
     })
     .catch(err => {
@@ -105,7 +104,7 @@ loaderOpen() {
 
     const {image1, image2, image3, image4, image5, image6, image7, height, navbarOpen, projectsArray, loaderOpen} = this.state;
     
-    console.log(projectsArray)
+    
 
     if (navbarOpen===true) {
       return (
@@ -117,16 +116,43 @@ loaderOpen() {
     if (loaderOpen===true) {
       return (
         <div className="loader-open">
-          <aside className="">
-            <div class="gooey">
-              <span class="dot"></span>
-              <div class="dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+          <div class="gooey">
+            <span class="dot"></span>
+            <div class="dots">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-          </aside>
+          </div>
+          <div className="wrapper">
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
         </div>
       )
     }

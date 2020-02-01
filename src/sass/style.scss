@@ -2,7 +2,9 @@
 @import "libs/mixins.scss";
 @import "libs/responsive.scss";
 @import "card.scss";
+@import "newloader.scss";
 @import "loader.scss";
+
 
 $main-color: rgb(160, 156, 149);
 $second-color: rgb(197, 189, 189);
@@ -17,6 +19,7 @@ $effect-color:  rgba(248, 185, 83, 0.534);
 
 body,
 html {
+  
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Poppins", sans-serif;
