@@ -41,11 +41,11 @@ class HomePage extends React.Component {
   this.scrollToTop = this.scrollToTop.bind(this);
   this.scrollToBottom = this.scrollToBottom.bind(this);
   this.scrollTo = this.scrollTo.bind(this);
-  //this.firstLoading = this.firstLoading.bind(this);
+  this.firstLoading = this.firstLoading.bind(this);
 }
 
 componentDidMount() {
-  this.interval = setInterval(() => this.tick(),40);
+  this.interval = setInterval(() => this.firstLoading(),40);
   //window.setInterval(this.firstLoading,5000);
   window.addEventListener("scroll", this.handleScroll);
   axios.get("http://localhost:4000/api/projects")
@@ -107,17 +107,8 @@ loaderOpen() {
   })
 }
 
-// firstLoading() {
-//   let {c,count} = this.state;
-//   this.setState({
-//     c:c++,
-//     count:count++,
-//     // beginning: false,
-//   })
-// }
 
-tick() {
-  
+firstLoading() {
   this.setState(state => ({
     c:state.c+1,
     count:state.count+1

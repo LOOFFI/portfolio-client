@@ -397,7 +397,7 @@ td, th {
 .loading-page p {
   font-size: 40px;
   font-weight: 100;
-  color: #f60d54;
+  color: #651FFF;
 }
 .loading-page h1 {
   color: white;
@@ -405,7 +405,7 @@ td, th {
   margin-top: -10px;
 }
 .loading-page hr {
-  background: #f60d54;
+  background: #651FFF;
   border: none;
   height: 1px;
 }
@@ -421,7 +421,7 @@ td, th {
 .loading-page .counter .color {
   width: 0px;
   overflow: hidden;
-  color: #f60d54;
+  color: #651FFF;
 }
 
 * {
