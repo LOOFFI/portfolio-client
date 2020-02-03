@@ -462,6 +462,7 @@ nav {
 
 .projects {
   margin-left: 35vw;
+  z-index: 20;
 }
 
 .motion {
@@ -516,7 +517,7 @@ nav {
 @media only screen and (min-width: 768px) {
   .my-navbar-nav {
     z-index: 6;
-    margin: 40vh auto;
+    margin: 10vh 50vh 0 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -657,6 +658,25 @@ nav {
 
 .one-project {
   margin: 10vh 0;
+}
+
+.my-footer {
+  position: fixed;
+  background-color: #c5bdbd;
+  height: 30vh;
+  width: 86vw;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+  color: #686560;
+}
+
+.links > p {
+  font-size: 2rem;
 }
 
 a.nav-min {

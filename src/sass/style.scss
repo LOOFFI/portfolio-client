@@ -9,6 +9,7 @@
 $main-color: rgb(160, 156, 149);
 $second-color: rgb(197, 189, 189);
 $effect-color: rgba(248, 185, 83, 0.534);
+$footer-font-color: rgb(104, 101, 96);
 
 * {
   padding: 0;
@@ -46,10 +47,9 @@ nav {
   font-size: 13rem;
 }
 
-
-
 .projects {
   margin-left: 35vw;
+  z-index: 20;
 }
 
 .motion {
@@ -109,7 +109,7 @@ nav {
 @media #{$medium-up} {
   .my-navbar-nav {
     z-index: 6;
-    margin: 40vh auto;
+    margin: 10vh 50vh 0 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -258,6 +258,25 @@ nav {
 
 .one-project {
   margin: 10vh 0;
+}
+
+.my-footer {
+  position: fixed;
+  background-color: $second-color;
+  height: 30vh;
+  width: 86vw;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+  color: $footer-font-color;
+}
+
+.links > p {
+  font-size: 2rem;
 }
 
 a {

@@ -7,6 +7,7 @@ import NavBar from './NavBar';
 import Card from './Card';
 import ContactForm from './ContactForm';
 import axios from 'axios';
+import Footer from './Footer';
 
 
 const insideStyles = {  
@@ -322,7 +323,9 @@ firstLoading() {
               </div>
             </div>
             
-            </div>               
+            </div>
+            <ContactForm loaderOpen={e => this.loaderOpen(e)} scrollToTop={this.scrollToTop}/>    
+            <Footer/>           
         </div>   
     );
     }
