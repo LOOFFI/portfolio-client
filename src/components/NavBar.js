@@ -24,8 +24,9 @@ class NavBar extends React.Component {
           <aside className="open">
 
            <div className="navbar">
-            <div></div>
-            <h1 id="main-title">Domaine de la vigne heureuse</h1>
+            <div>
+              <h1 id="main-title">Welcome on board</h1>
+              </div>
             <div className="menu-icon is-opened" onClick={this.handleClick}>
               <span></span>
             </div>
@@ -54,8 +55,9 @@ class NavBar extends React.Component {
     else {
       return ( 
         <div className="navbar">
-          <div></div>
-          <h1 id="main-title">Domaine de la vigne heureuse</h1>
+          <div>
+            <h1 id="main-title">Welcome on board</h1>
+          </div>
           <div className="menu-icon" onClick={this.handleClick}>
             <span></span>
           </div>

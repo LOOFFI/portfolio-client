@@ -6,12 +6,9 @@
 @import "loader.scss";
 @import "firstloader";
 
-
 $main-color: rgb(160, 156, 149);
 $second-color: rgb(197, 189, 189);
 $effect-color: rgba(248, 185, 83, 0.534);
-
-
 
 * {
   padding: 0;
@@ -20,9 +17,8 @@ $effect-color: rgba(248, 185, 83, 0.534);
 
 body,
 html {
-  
   height: 100%;
-  margin: 0;
+  margin-right: 7vw;
   font: 400 15px/1.8 "Poppins", sans-serif;
   color: $main-color;
 }
@@ -37,9 +33,7 @@ nav {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  
 }
-
 
 .arrow-fixed {
   position: fixed;
@@ -48,8 +42,14 @@ nav {
 }
 
 #main-title {
-  display: flex;
-  justify-content: center;
+  width: 60vw;
+  font-size: 13rem;
+}
+
+
+
+.projects {
+  margin-left: 35vw;
 }
 
 .motion {
@@ -68,7 +68,7 @@ nav {
   height: 70%;
 
   .my-border {
-    background-color: rgba($second-color, 0.144);
+    background-color: rgba($second-color, 0.5);
     border-radius: 5px;
     padding: 8px;
     color: #fff;
@@ -77,7 +77,7 @@ nav {
     transition: background-color 2s;
 
     &:hover {
-      background-color: rgba($second-color, 0.8);
+      background-color: rgba($second-color, 0.9);
     }
 
     & > .fa-angle-down,
@@ -87,8 +87,6 @@ nav {
     }
   }
 }
-
-
 
 @media #{$medium-down} {
   .my-navbar-nav {
@@ -102,6 +100,9 @@ nav {
     margin: 2em;
     @include rotate(-28deg);
     width: 13em;
+  }
+  #main-title {
+    font-size: 7rem;
   }
 }
 
@@ -126,14 +127,13 @@ nav {
 }
 
 .menu-icon {
-  
   position: relative;
   width: 54px;
   height: 54px;
   @include transition;
   animation: antirotation 0.1s;
 
-   & span {
+  & span {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -172,43 +172,35 @@ nav {
   }
 
   &:hover {
-    
     span::before {
-    @include translation(-8px);
-   }
+      @include translation(-8px);
+    }
 
     span::after {
-    @include translation(8px);
-   }
+      @include translation(8px);
+    }
   }
 
-
   &.is-opened {
-
-    
     animation: rotation 0.5s;
 
     span {
       background: transparent;
-      
     }
-  
+
     span::before {
       @include rotation(0, 45deg);
     }
-  
+
     span::after {
       @include rotation(0, -45deg);
     }
-  } 
-
-  
-  
+  }
 }
 
 @keyframes rotation {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
   to {
     transform: rotate(180deg);
@@ -217,7 +209,7 @@ nav {
 
 @keyframes antirotation {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
   to {
     transform: rotate(-180deg);
@@ -234,17 +226,15 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 15vh;
+  height: 75vh;
   overflow: hidden;
 }
 
-
 .nav-min {
   font-size: 1.5em;
-} 
+}
 
 .hover-effect {
-
   width: 0%;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
@@ -256,10 +246,9 @@ nav {
   bottom: -0.5px;
   border-bottom: 1.5px solid rgba($effect-color, 0.534);
   -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 
   &:hover {
-    
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
@@ -267,39 +256,39 @@ nav {
   }
 }
 
+.one-project {
+  margin: 10vh 0;
+}
+
 a {
   &.nav-min {
-
     color: rgba($main-color, 0.534);
     text-decoration: none;
     white-space: nowrap;
     transition: color 1s ease-in-out;
 
     &:hover {
-
       color: $effect-color;
     }
   }
-
-  
-
 }
 
 @keyframes fadein {
   from {
-      opacity:0;
+    opacity: 0;
   }
   to {
-      opacity:1;
+    opacity: 1;
   }
 }
 
-@-webkit-keyframes fadein { /* sur Safari et Chrome */
+@-webkit-keyframes fadein {
+  /* sur Safari et Chrome */
   from {
-      opacity:0;
+    opacity: 0;
   }
   to {
-      opacity:1;
+    opacity: 1;
   }
 }
 
@@ -330,5 +319,3 @@ a {
 .parallax-bg-effect {
   border-radius: 10px;
 }
-
-

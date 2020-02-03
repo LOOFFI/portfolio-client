@@ -192,7 +192,23 @@ firstLoading() {
     return (
         <div className="main">
             <NavBar navbarOpen={navbarOpen} onClick={() => this.isOpen()}/>
-            <Parallax  
+            <div className="projects">
+              <ul className="">
+                {projectsArray.map(project => 
+                  <li className="one-project"><Parallax 
+                      bgImage={project.img}
+                      bgImageSrcSet={`${project.img} 720w, ${project.img} 1120w`} 
+                      bgImageSizes='auto'
+                      blur={{min:-15, max:15}} 
+                      strength={800}
+                      bgImageAlt="bunch of grapes">
+                        <div style={{height: '75vh'}}>
+                        <Motion onClick={() => this.scrollTo('first-title')}></Motion>
+                        </div>
+                  </Parallax></li> 
+                )}
+              </ul>
+            {/* <Parallax  
                 bgImage={image7}
                 bgImageSrcSet={`${image7} 720w, ${image2} 1120w`} 
                 bgImageSizes='auto'
@@ -200,19 +216,19 @@ firstLoading() {
                 strength={800}
                 bgImageAlt="bunch of grapes" 
                 
-                >
+                > */}
                  
                   {/* height is a style property (an object) an must be wrapped in 2 braces */}
-                  <div style={{height: '100vh'}}>
+                  {/* <div style={{height: '75vh'}}>
                     {/* <div style={insideStyles}>
                       <div className="my-border"><h1>Domaine de la vigne heureuse</h1></div>
                     </div> */}
-                    <Motion onClick={() => this.scrollTo('first-title')}></Motion>
+                    {/* <Motion onClick={() => this.scrollTo('first-title')}></Motion>
                   </div>
-            </Parallax>
+            </Parallax> */}
 
           {/* the Element is setup to point the scroll action in the scrollTo function */}
-          <Element name="first-title"><h1>Yar Pirate Ipsum</h1></Element>
+          {/* <Element name="first-title"><h1>Yar Pirate Ipsum</h1></Element>
           <div className="text-container">
           <p>Knave sloop boom chantey hearties Arr belay Plate Fleet pinnace flogging. Pink scuppers grog schooner warp scuttle spanker cutlass doubloon gun. Prow trysail hearties provost lad schooner scuppers handsomely cackle fruit Jack Tar.Coxswain gabion bilge rat sloop splice the main brace maroon league six pounders take a caulk ballast. Rope's end jib come about chase guns tack belay gangway run a shot across the bow bilge rat quarter. Carouser barkadeer Gold Road me spike walk the plank execution dock clap of thunder bring a spring upon her cable Arr.Lee bucko pressgang squiffy man-of-war stern scuttle me Cat o'nine tails fire ship. Splice the main brace pink broadside boatswain bilge sheet league lass scuttle bowsprit. Maroon clipper fire in the hole walk the plank list red ensign Davy Jones' Locker stern crimp spanker.</p>
           </div>
@@ -278,9 +294,9 @@ firstLoading() {
               <div style={{height}}>
                 <div style={insideStyles}>
                     <ContactForm loaderOpen={e => this.loaderOpen(e)} scrollToTop={this.scrollToTop}/>
-                </div>
+                </div> */}
                 {/* <Motion onClick={() => this.scrollTo('third-title')}></Motion> */}
-              </div>
+              {/* </div>
             </span>
             
             </Parallax>
@@ -292,12 +308,12 @@ firstLoading() {
               strength={800} 
               
               >
-              <div style={{height: '100vh'}}>
+              <div style={{height: '100vh'}}> */}
                 {/* <div className="motion">
                   <span className="my-border" onClick={() => this.scrollToTop()}><i className="fas fa-angle-up"></i></span>
                 </div> */}
-              </div>
-            </Parallax>
+              {/* </div>
+            </Parallax> */}
 
             {/* Arrow to go to the top appears when user scrolls */}
             <div className={this.state.show ? "arrow-fixed" : "hidden"}>
@@ -306,7 +322,7 @@ firstLoading() {
               </div>
             </div>
             
-
+            </div>               
         </div>   
     );
     }

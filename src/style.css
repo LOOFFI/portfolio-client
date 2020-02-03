@@ -432,7 +432,7 @@ td, th {
 body,
 html {
   height: 100%;
-  margin: 0;
+  margin-right: 7vw;
   font: 400 15px/1.8 "Poppins", sans-serif;
   color: #a09c95;
 }
@@ -456,8 +456,12 @@ nav {
 }
 
 #main-title {
-  display: flex;
-  justify-content: center;
+  width: 60vw;
+  font-size: 13rem;
+}
+
+.projects {
+  margin-left: 35vw;
 }
 
 .motion {
@@ -473,7 +477,7 @@ nav {
   height: 70%;
 }
 .motion .my-border {
-  background-color: rgba(197, 189, 189, 0.144);
+  background-color: rgba(197, 189, 189, 0.5);
   border-radius: 5px;
   padding: 8px;
   color: #fff;
@@ -482,7 +486,7 @@ nav {
   transition: background-color 2s;
 }
 .motion .my-border:hover {
-  background-color: rgba(197, 189, 189, 0.8);
+  background-color: rgba(197, 189, 189, 0.9);
 }
 .motion .my-border > .fa-angle-down, .motion .my-border > .fa-angle-up {
   padding: 8px 18px 0px 26px;
@@ -503,6 +507,10 @@ nav {
     -webkit-transform: rotate(-28deg);
     transform: rotate(-28deg);
     width: 13em;
+  }
+
+  #main-title {
+    font-size: 7rem;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -618,7 +626,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 15vh;
+  height: 75vh;
   overflow: hidden;
 }
 
@@ -645,6 +653,10 @@ nav {
   max-width: -moz-max-content;
   max-width: max-content;
   width: 100%;
+}
+
+.one-project {
+  margin: 10vh 0;
 }
 
 a.nav-min {
