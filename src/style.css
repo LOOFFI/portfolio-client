@@ -461,8 +461,18 @@ nav {
 }
 
 .projects {
-  margin-left: 35vw;
-  z-index: 20;
+  margin: 10vh 0 10vh 35vw;
+}
+.projects .one-project {
+  margin: 10vh 0;
+}
+.projects:hover {
+  top: 0;
+  left: 100%;
+}
+
+#project-title {
+  font-size: 2rem;
 }
 
 .motion {
@@ -618,7 +628,7 @@ nav {
   }
 }
 .open {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(46, 42, 40, 0.911);
   height: 100%;
   overflow: hidden;
 }
@@ -656,10 +666,6 @@ nav {
   width: 100%;
 }
 
-.one-project {
-  margin: 10vh 0;
-}
-
 .my-footer {
   position: fixed;
   background-color: #c5bdbd;
@@ -675,7 +681,7 @@ nav {
   color: #686560;
 }
 
-.links > p {
+.links p {
   font-size: 2rem;
 }
 
@@ -751,6 +757,7 @@ a.nav-min:hover {
 }
 
 .text-container {
+  height: 100vh;
   padding: 20px;
 }
 

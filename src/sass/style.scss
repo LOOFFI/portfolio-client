@@ -5,6 +5,7 @@
 @import "newloader.scss";
 @import "loader.scss";
 @import "firstloader";
+@import "project_card.scss";
 
 $main-color: rgb(160, 156, 149);
 $second-color: rgb(197, 189, 189);
@@ -48,9 +49,20 @@ nav {
 }
 
 .projects {
-  margin-left: 35vw;
-  z-index: 20;
+  margin: 10vh 0 10vh 35vw; 
+  & .one-project {
+    margin: 10vh 0;
+    }
+  &:hover {
+    top: 0;
+    left: 100%;
+  }
 }
+
+#project-title {
+  font-size: 2rem;
+}
+
 
 .motion {
   display: -webkit-box;
@@ -217,7 +229,7 @@ nav {
 }
 
 .open {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(46, 42, 40, 0.911);
   height: 100%;
   overflow: hidden;
 }
@@ -256,9 +268,7 @@ nav {
   }
 }
 
-.one-project {
-  margin: 10vh 0;
-}
+
 
 .my-footer {
   position: fixed;
@@ -275,8 +285,10 @@ nav {
   color: $footer-font-color;
 }
 
-.links > p {
-  font-size: 2rem;
+.links {
+  & p {
+    font-size: 2rem;
+  }
 }
 
 a {
@@ -332,6 +344,7 @@ a {
 }
 
 .text-container {
+  height: 100vh;
   padding: 20px;
 }
 
