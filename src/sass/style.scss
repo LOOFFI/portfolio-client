@@ -9,6 +9,7 @@
 
 $main-color: rgb(160, 156, 149);
 $second-color: rgb(197, 189, 189);
+$main-bg-color: rgb(228, 232, 241);
 $effect-color: rgba(248, 185, 83, 0.534);
 $footer-font-color: rgb(104, 101, 96);
 
@@ -37,6 +38,10 @@ nav {
   overflow: hidden;
 }
 
+.main {
+  background: $main-bg-color;
+}
+
 .arrow-fixed {
   position: fixed;
   bottom: 80px;
@@ -49,7 +54,7 @@ nav {
 }
 
 .projects {
-  margin: 10vh 0 10vh 35vw; 
+  margin: 10vh 1vw 10vh 35vw; 
   & .one-project {
     margin: 10vh 0;
     }
@@ -229,7 +234,7 @@ nav {
 }
 
 .open {
-  background-color: rgba(46, 42, 40, 0.911);
+  background-color: rgb(46, 42, 40);
   height: 100%;
   overflow: hidden;
 }
@@ -351,6 +356,9 @@ a {
 .text-container {
   height: 100vh;
   padding: 20px;
+  & h1 {
+    padding: 20px;
+  }
 }
 
 .parallax-bg-effect {
@@ -373,4 +381,8 @@ a {
   font-size: 1.5rem;
   position: absolute;
   right: -30px;
+}
+
+.contact {
+  height: 100vh;
 }

@@ -25,7 +25,8 @@ class NavBar extends React.Component {
 
            <div className="navbar">
             <div>
-              <h1 id="main-title">A.R.</h1>
+              {/* <h1 id="main-title">A.R.</h1> */}
+              <img src="../../logoGTnav.jpg" alt="logo"/>
               </div>
             <div className="menu-icon is-opened" onClick={this.handleClick}>
               <span></span>
@@ -56,7 +57,8 @@ class NavBar extends React.Component {
       return ( 
         <div className="navbar">
           <div>
-            <h1 id="main-title">A.R.</h1>
+            {/* <h1 id="main-title">A.R.</h1> */}
+            <img src="../../logoGT.jpg" alt="logo"/>
           </div>
           <div className="menu-icon" onClick={this.handleClick}>
             <span></span>

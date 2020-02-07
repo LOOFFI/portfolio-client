@@ -16,7 +16,8 @@ class ContactForm extends React.Component {
       message:"",
       isSubmitSuccess: false,
       contactFormOpen: false,
-      loader: false
+      loader: false,
+      sitekey: process.env.REACT_APP_SITEKEY
     }
   }
 
@@ -82,7 +83,7 @@ class ContactForm extends React.Component {
 
   render() { 
 
-    const {name,email,message,isSubmitSuccess,contactFormOpen,loader} = this.state;
+    const {name,email,message,isSubmitSuccess,contactFormOpen,sitekey} = this.state;
     
     if (!contactFormOpen) {
       return <Button onClick={e => this.showForm()}>Click here to contact me</Button>
@@ -115,7 +116,7 @@ class ContactForm extends React.Component {
           <FormGroup>
           <ReCAPTCHA
             ref={(el) => { this.recaptcha = el; }}
-            sitekey="6Ldo4aYUAAAAAHYale41xu3L7t89iER2h9rhwJ4P"
+            sitekey={sitekey}
             onChange={this.handleCaptchaResponseChange}
           />
           </FormGroup>

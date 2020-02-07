@@ -449,6 +449,10 @@ nav {
   overflow: hidden;
 }
 
+.main {
+  background: #e4e8f1;
+}
+
 .arrow-fixed {
   position: fixed;
   bottom: 80px;
@@ -461,7 +465,7 @@ nav {
 }
 
 .projects {
-  margin: 10vh 0 10vh 35vw;
+  margin: 10vh 1vw 10vh 35vw;
 }
 .projects .one-project {
   margin: 10vh 0;
@@ -628,7 +632,7 @@ nav {
   }
 }
 .open {
-  background-color: rgba(46, 42, 40, 0.911);
+  background-color: #2e2a28;
   height: 100%;
   overflow: hidden;
 }
@@ -763,6 +767,9 @@ a.nav-min:hover {
   height: 100vh;
   padding: 20px;
 }
+.text-container h1 {
+  padding: 20px;
+}
 
 .parallax-bg-effect {
   border-radius: 10px;
@@ -782,6 +789,10 @@ a.nav-min:hover {
   font-size: 1.5rem;
   position: absolute;
   right: -30px;
+}
+
+.contact {
+  height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -24,7 +24,7 @@ class HomePage extends React.Component {
       beginning : true,
       c:0,
       count:0,
-      image1 : "https://images.unsplash.com/photo-1500806851969-7b469b45f3dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      image1 : "/public/logo.jpg",
       image2 : "https://images.unsplash.com/photo-1477093782505-e10aaeb27c6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       image3 : "https://images.unsplash.com/photo-1474226004578-62743874270f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
       image4 : "https://images.unsplash.com/photo-1464638681273-0962e9b53566?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
@@ -92,7 +92,7 @@ scrollTo(el) {
     arrowFixed: "arrow-fixed"
   })
   scroller.scrollTo( el , {
-    duration: 800,
+    duration: 2000,
     delay: 0,
     smooth: 'easeInOutQuart'
   })
@@ -123,18 +123,12 @@ firstLoading() {
     })
   }
 }
-// hideContact() {
-//   this.setState(
 
-//   )
-// }
 
   render() {
 
-    const {c,beginning, image5, height, navbarOpen, projectsArray, loaderOpen, hideFooter} = this.state;
-    console.log('windowheight',window.innerHeight);
-    console.log('from top',document.body.getBoundingClientRect().top);
-    console.log(hideFooter)
+    const {c,beginning, image1, image5, height, navbarOpen, projectsArray, loaderOpen, hideFooter} = this.state;
+   
     if (beginning) {
       return (
         <div className="loading-page">
@@ -259,7 +253,7 @@ firstLoading() {
             </div>
             
             </div>
-            
+            <div className="contact">
             <Element name='third-title'><h1>CONTACT ME</h1></Element>
             <Parallax 
                 bgImage={image5} 
@@ -292,8 +286,9 @@ firstLoading() {
             </span>
             
             </Parallax>
-            <Element name='fourth-title'><h1>About me</h1></Element>
+            </div>
             <div className="text-container">
+            <Element name='fourth-title'><h1>About me</h1></Element>
                 <p>Mozzarella cheese strings who moved my cheese. Cheesy feet babybel pecorino boursin cut the cheese rubber cheese the big cheese pepper jack. Brie cheesy grin melted cheese melted cheese cheese and wine mozzarella queso danish fontina. Port-salut chalk and cheese stilton red leicester.</p>
                 <p>Cauliflower cheese melted cheese edam. Taleggio rubber cheese emmental st. agur blue cheese cauliflower cheese mascarpone croque monsieur cheesy grin. Red leicester mozzarella babybel fromage cottage cheese when the cheese comes out everybody's happy cheese on toast cheese slices. Bocconcini edam parmesan hard cheese parmesan croque monsieur roquefort say cheese. Gouda.</p>
                 <p>Cheese triangles port-salut edam. Rubber cheese smelly cheese mozzarella ricotta fondue mascarpone stinking bishop pepper jack. Paneer taleggio fromage frais danish fontina chalk and cheese cheese strings brie swiss. Paneer parmesan mozzarella brie smelly cheese cow squirty cheese bavarian bergkase. Paneer roquefort when the cheese comes out everybody's happy macaroni cheese.</p>
