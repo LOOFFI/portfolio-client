@@ -36,7 +36,8 @@ class ContactForm extends React.Component {
   }
 
   showForm() {
-    this.setState({contactFormOpen:true})
+    const {contactFormOpen} = this.state;
+    this.setState({contactFormOpen:!contactFormOpen})
   }
 
   handleCaptchaResponseChange(response) {
@@ -77,6 +78,8 @@ class ContactForm extends React.Component {
       
   }
 
+  
+
   render() { 
 
     const {name,email,message,isSubmitSuccess,contactFormOpen,loader} = this.state;
@@ -91,6 +94,9 @@ class ContactForm extends React.Component {
       <main id="contact-position">
         
         <div className="container my-5 mx-auto">
+          <div className="close-form" onClick={e => this.showForm()}>
+            <span ><i class="far fa-times-circle"></i></span>
+          </div>
         <Form onSubmit={event => this.handleSubmit(event)}>
 
           

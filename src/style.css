@@ -669,7 +669,7 @@ nav {
 .my-footer {
   position: fixed;
   background-color: #c5bdbd;
-  height: 30vh;
+  height: 25vh;
   width: 86vw;
   bottom: 0;
   left: 0;
@@ -681,6 +681,9 @@ nav {
   color: #686560;
 }
 
+.links {
+  cursor: pointer;
+}
 .links p {
   font-size: 2rem;
 }
@@ -763,6 +766,22 @@ a.nav-min:hover {
 
 .parallax-bg-effect {
   border-radius: 10px;
+}
+
+.footer-visible {
+  visibility: visible;
+  transition: visibility 0.5s ease-in;
+}
+
+.hidden {
+  visibility: hidden;
+  transition: visibility 0.5s ease-out;
+}
+
+.close-form {
+  font-size: 1.5rem;
+  position: absolute;
+  right: -30px;
 }
 
 /*# sourceMappingURL=style.css.map */

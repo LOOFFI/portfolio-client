@@ -16,7 +16,7 @@ class Footer extends React.Component {
     
     return (
       <div className="my-footer">
-        <div>
+        <div className="links">
           <span onClick={e => this.handleClick('top')}><h1>Aurélien Rosaz</h1></span>
         </div>
         <div className="links">

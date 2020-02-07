@@ -273,7 +273,7 @@ nav {
 .my-footer {
   position: fixed;
   background-color: $second-color;
-  height: 30vh;
+  height: 25vh;
   width: 86vw;
   bottom: 0;
   left: 0;
@@ -283,11 +283,16 @@ nav {
   align-items: center;
   padding: 0 5vw;
   color: $footer-font-color;
+  
 }
 
+
+
 .links {
+  cursor: pointer;
   & p {
     font-size: 2rem;
+    
   }
 }
 
@@ -350,4 +355,22 @@ a {
 
 .parallax-bg-effect {
   border-radius: 10px;
+}
+
+.footer-visible {
+  visibility: visible;
+  transition: visibility 0.5s ease-in;
+  
+}
+
+.hidden {
+  visibility: hidden;
+  transition: visibility 0.5s ease-out;
+  
+}
+
+.close-form {
+  font-size: 1.5rem;
+  position: absolute;
+  right: -30px;
 }
