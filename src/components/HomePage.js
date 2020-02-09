@@ -66,18 +66,7 @@ componentWillUnmount() {
   window.removeEventListener("scroll", this.handleScroll);
 }
 
-accessProject(project) {
-  axios.get(`http://localhost:4000/api/projects/${project}`)
-  .then(res => {
-    this.setState({
-      projectId: res.data._id
-    })
-  })
-  .catch(err => {
-    console.log(err);
-    alert("something wrong in the projects request")
-  })
-}
+
 
 handleScroll() {
   const { scrollPos } = this.state;
@@ -143,7 +132,7 @@ firstLoading() {
   render() {
 
     const {c,beginning, image1, image5, height, navbarOpen, projectsArray, loaderOpen, hideFooter,projectId} = this.state;
-    console.log(projectsArray)
+    
     if (projectId!==null) {
       return <Redirect to={`/project/${projectId}`}/>
     }
@@ -217,11 +206,10 @@ firstLoading() {
             <NavBar navbarOpen={navbarOpen} onClick={() => this.isOpen()}/>
             <div className="projects">
               <ul className="">
-                {projectsArray.map(project => 
+                {projectsArray.map((project,index) => 
 
-                <Link to={`/project/${project._id}`}>
-                  <li className="one-project">
-                                
+                <Link to={`/project/${project._id}`} key={index}>
+                  <li className="one-project" >
                     <Parallax 
                       bgImage={project.img}
                       bgImageSrcSet={`${project.img} 720w, ${project.img} 1120w`} 
