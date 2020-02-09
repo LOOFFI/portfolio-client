@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Redirect } from "react-router-dom";
 import { Parallax } from "react-parallax";
 import * as Scroll from 'react-scroll';
 import { Element , animateScroll as scroll, scroller } from 'react-scroll'
@@ -37,7 +38,8 @@ class HomePage extends React.Component {
       navbarOpen : false,
       projectsArray : [],
       loaderOpen : false,
-      hideFooter: false
+      hideFooter: false,
+      projectId: null
   }
   this.handleScroll = this.handleScroll.bind(this);
   this.scrollToTop = this.scrollToTop.bind(this);
@@ -62,6 +64,19 @@ componentDidMount() {
 
 componentWillUnmount() {
   window.removeEventListener("scroll", this.handleScroll);
+}
+
+accessProject(project) {
+  axios.get(`http://localhost:4000/api/projects/${project}`)
+  .then(res => {
+    this.setState({
+      projectId: res.data._id
+    })
+  })
+  .catch(err => {
+    console.log(err);
+    alert("something wrong in the projects request")
+  })
 }
 
 handleScroll() {
@@ -127,8 +142,12 @@ firstLoading() {
 
   render() {
 
-    const {c,beginning, image1, image5, height, navbarOpen, projectsArray, loaderOpen, hideFooter} = this.state;
-   
+    const {c,beginning, image1, image5, height, navbarOpen, projectsArray, loaderOpen, hideFooter,projectId} = this.state;
+    console.log(projectsArray)
+    if (projectId!==null) {
+      return <Redirect to={`/project/${projectId}`}/>
+    }
+
     if (beginning) {
       return (
         <div className="loading-page">
@@ -199,7 +218,11 @@ firstLoading() {
             <div className="projects">
               <ul className="">
                 {projectsArray.map(project => 
-                  <li className="one-project"><Parallax 
+
+                <Link to={`/project/${project._id}`}>
+                  <li className="one-project">
+                                
+                    <Parallax 
                       bgImage={project.img}
                       bgImageSrcSet={`${project.img} 720w, ${project.img} 1120w`} 
                       bgImageSizes='auto'
@@ -219,6 +242,8 @@ firstLoading() {
                               }}
                           />
                           <div id='project-title'>
+                            
+                          
                          <div style={{
                               position: "absolute",
                               top: "50%",
@@ -227,7 +252,7 @@ firstLoading() {
                               fontSize: `${percentage * 4}rem`
                               }}
                          >
-                             {project.title}
+                           <span className="project-title">{project.title}</span>
                          </div>
                        </div>
                         </div>
@@ -242,6 +267,7 @@ firstLoading() {
                         </div>
                        
                   </Parallax></li> 
+                  </Link>
                 )}
               </ul>
            

@@ -54,10 +54,10 @@ nav {
 }
 
 .projects {
-  margin: 10vh 1vw 10vh 35vw; 
+  margin: 10vh 1vw 10vh 35vw;
   & .one-project {
     margin: 10vh 0;
-    }
+  }
   &:hover {
     top: 0;
     left: 100%;
@@ -67,7 +67,6 @@ nav {
 #project-title {
   font-size: 2rem;
 }
-
 
 .motion {
   display: -webkit-box;
@@ -273,8 +272,6 @@ nav {
   }
 }
 
-
-
 .my-footer {
   position: fixed;
   background-color: $second-color;
@@ -288,16 +285,12 @@ nav {
   align-items: center;
   padding: 0 5vw;
   color: $footer-font-color;
-  
 }
-
-
 
 .links {
   cursor: pointer;
   & p {
     font-size: 2rem;
-    
   }
 }
 
@@ -368,13 +361,11 @@ a {
 .footer-visible {
   visibility: visible;
   transition: visibility 0.5s ease-in;
-  
 }
 
 .hidden {
   visibility: hidden;
   transition: visibility 0.5s ease-out;
-  
 }
 
 .close-form {
@@ -385,4 +376,8 @@ a {
 
 .contact {
   height: 100vh;
+}
+
+.project-title {
+  color: $main-color;
 }

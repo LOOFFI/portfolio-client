@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import {Switch,Route} from 'react-router-dom'
 import NotFound from './components/NotFound';
 import HomePage from './components/HomePage.js';
-
+import Project from './components/Project.js'
 
 
 
@@ -31,6 +31,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={HomePage}/>
               <Route path="/notfound" component={ NotFound }/>
+              <Route exact path="/project/:projectId" component={ Project }/>
             </Switch>
       
 
