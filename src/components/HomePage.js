@@ -1,11 +1,8 @@
 import React from 'react';
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Parallax } from "react-parallax";
-import * as Scroll from 'react-scroll';
 import { Element , animateScroll as scroll, scroller } from 'react-scroll'
-import  Motion from './Motion';
 import NavBar from './NavBar';
-import Card from './Card';
 import ContactForm from './ContactForm';
 import axios from 'axios';
 import Footer from './Footer';
@@ -38,8 +35,8 @@ class HomePage extends React.Component {
       navbarOpen : false,
       projectsArray : [],
       loaderOpen : false,
-      hideFooter: false,
-      projectId: null
+      hideFooter: false
+     
   }
   this.handleScroll = this.handleScroll.bind(this);
   this.scrollToTop = this.scrollToTop.bind(this);
@@ -131,13 +128,10 @@ firstLoading() {
 
   render() {
 
-    const {c,beginning, image1, image5, height, navbarOpen, projectsArray, loaderOpen, hideFooter,projectId} = this.state;
+    const {c, beginning, image5, height, navbarOpen, projectsArray, loaderOpen } = this.state;
     
-    if (projectId!==null) {
-      return <Redirect to={`/project/${projectId}`}/>
-    }
-
-    if (beginning) {
+   
+    if (beginning&&window.history.length<2) {
       return (
         <div className="loading-page">
           <div className="counter">
@@ -262,7 +256,7 @@ firstLoading() {
             {/* Arrow to go to the top appears when user scrolls */}
             <div className={this.state.show ? "arrow-fixed" : "hidden"}>
               <div className="motion">
-                    <span className="my-border" onClick={() => this.scrollToTop()}><i className="fas fa-angle-up"></i></span>
+                    <span className="my-border my-border-up" onClick={() => this.scrollToTop()}><i className="fas fa-angle-up"></i></span>
               </div>
             </div>
             

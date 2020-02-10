@@ -47,7 +47,7 @@ td, th {
 
 .arrow-fixed {
   position: fixed;
-  bottom: 80px;
+  top: 40vh;
   right: 50px;
 }
 
@@ -72,6 +72,9 @@ td, th {
   font-size: 25px;
   letter-spacing: 10px;
   transition: background-color 2s;
+}
+.motion .my-border.my-border-up {
+  background-color: rgba(197, 189, 189, 0.7);
 }
 .motion .my-border:hover {
   background-color: rgba(197, 189, 189, 0.9);
@@ -746,6 +749,15 @@ a.nav-min:hover {
   padding: 20vh 10vw;
 }
 
+.description {
+  text-align: left;
+  padding-left: 3vw;
+}
+.description > p, .description a {
+  font-size: 2em;
+  color: #a09c95;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -815,6 +827,12 @@ nav {
 
 .contact {
   height: 100vh;
+}
+
+#logo-to-home {
+  position: fixed;
+  top: 10vh;
+  right: 5vw;
 }
 
 /*# sourceMappingURL=style.css.map */

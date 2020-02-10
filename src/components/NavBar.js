@@ -25,7 +25,6 @@ class NavBar extends React.Component {
 
            <div className="navbar">
             <div>
-              {/* <h1 id="main-title">A.R.</h1> */}
               <img src="../../logoGTnav.jpg" alt="logo"/>
               </div>
             <div className="menu-icon is-opened" onClick={this.handleClick}>
