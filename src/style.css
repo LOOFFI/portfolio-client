@@ -221,6 +221,17 @@ td, th {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 768px) {
+  .menu-icon {
+    position: fixed;
+    top: 3vh;
+    right: 3vw;
+  }
+
+  aside > .navbar {
+    height: 25vh;
+  }
+}
 .nav-min {
   font-size: 1.5em;
 }
@@ -332,6 +343,11 @@ a.nav-min:hover {
   color: #686560;
 }
 
+@media only screen and (max-width: 1024px) {
+  .my-footer {
+    width: 100vw;
+  }
+}
 .links {
   cursor: pointer;
 }
@@ -339,6 +355,11 @@ a.nav-min:hover {
   font-size: 2rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .links p, .links h1 {
+    font-size: 1.5rem;
+  }
+}
 .footer-visible {
   visibility: visible;
   transition: visibility 0.5s ease-in;
@@ -771,6 +792,11 @@ html {
   color: #a09c95;
 }
 
+@media only screen and (max-width: 1024px) {
+  body, html {
+    margin-right: 0;
+  }
+}
 h1 {
   font-size: 2em;
   text-align: center;
@@ -803,6 +829,11 @@ nav {
   left: 100%;
 }
 
+@media only screen and (max-width: 1024px) {
+  .projects {
+    margin: 1vw;
+  }
+}
 #project-title {
   font-size: 2rem;
 }
@@ -825,6 +856,11 @@ nav {
   right: -30px;
 }
 
+@media only screen and (max-width: 768px) {
+  .close-form {
+    right: 0;
+  }
+}
 .contact {
   height: 100vh;
 }
