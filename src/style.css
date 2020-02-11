@@ -85,6 +85,12 @@ td, th {
 }
 
 @media only screen and (max-width: 768px) {
+  .motion {
+    visibility: hidden;
+    height: 60vh;
+  }
+}
+@media only screen and (max-width: 768px) {
   .my-navbar-nav {
     display: flex;
     flex-direction: column;
@@ -759,6 +765,11 @@ a.nav-min:hover {
   z-index: -100;
 }
 
+@media only screen and (min-width: 1024px) {
+  .project-img img {
+    height: 100vh;
+  }
+}
 .project-title {
   color: #a09c95;
 }
@@ -779,6 +790,32 @@ a.nav-min:hover {
   color: #a09c95;
 }
 
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    padding: 3vh;
+  }
+  .description > p, .description a {
+    font-size: 1.1rem;
+  }
+}
+#dice-to-home {
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+  z-index: 300;
+  color: #a09c95;
+  font-size: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  #dice-to-home {
+    display: none;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -869,6 +906,12 @@ nav {
   position: fixed;
   top: 10vh;
   right: 5vw;
+}
+
+@media only screen and (max-width: 1024px) {
+  #logo-to-home {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

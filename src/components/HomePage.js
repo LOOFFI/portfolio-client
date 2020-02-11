@@ -302,7 +302,8 @@ firstLoading() {
                 <p>Cheese triangles port-salut edam. Rubber cheese smelly cheese mozzarella ricotta fondue mascarpone stinking bishop pepper jack. Paneer taleggio fromage frais danish fontina chalk and cheese cheese strings brie swiss. Paneer parmesan mozzarella brie smelly cheese cow squirty cheese bavarian bergkase. Paneer roquefort when the cheese comes out everybody's happy macaroni cheese.</p>
                 <p>Fondue parmesan cheese and wine. Manchego chalk and cheese babybel airedale croque monsieur queso everyone loves cheesy grin. Croque monsieur everyone loves queso gouda brie melted cheese macaroni cheese boursin. Melted cheese caerphilly cheese and wine camembert de normandie cheesy feet danish fontina.</p>
             <div>
-              <h1>Instagram</h1>
+            
+              {/* <h1><a href="" ><i class="fab fa-instagram"></i> Instagram</a></h1> */}
             </div>
             </div>
             <div className={!this.state.hideFooter ? "footer-visible" : "hidden"}>

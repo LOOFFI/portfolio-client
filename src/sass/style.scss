@@ -111,5 +111,12 @@ nav {
   top: 10vh;
   right: 5vw;
 }
+@media #{$large-down} {
+  #logo-to-home {
+    display: none;
+  }
+}
+
+
 
 
