@@ -35,9 +35,13 @@ class HomePage extends React.Component {
       navbarOpen : false,
       projectsArray : [],
       loaderOpen : false,
-      hideFooter: false
-     
-  }
+      hideFooter: false,
+      id: null,
+      title: "coucou",
+      description: "coucou c'est la description",
+      link: "le link",
+      img: "https://images.unsplash.com/photo-1526137630052-dc2c4693f0d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    }
   this.handleScroll = this.handleScroll.bind(this);
   this.scrollToTop = this.scrollToTop.bind(this);
   this.scrollToBottom = this.scrollToBottom.bind(this);
@@ -49,14 +53,17 @@ componentDidMount() {
   this.interval = setInterval(() => this.firstLoading(),20);
  
   window.addEventListener("scroll", this.handleScroll);
+ 
   axios.get("http://localhost:4000/api/projects")
     .then(res => {
+      console.log(res);
       this.setState({projectsArray: res.data})
     })
     .catch(err => {
       console.log(err);
       alert("something wrong in the projects request")
     })
+  
 }
 
 componentWillUnmount() {
@@ -125,12 +132,26 @@ firstLoading() {
   }
 }
 
+// handleSubmit() {
+  
+//   axios.post("http://localhost:4000/api/projects", this.state)
+//     .then(res => {
+//       console.log(res);
+//       this.setState({
+//         id: res.data._id
+//       })
+//     .catch(err => {
+//         console.log(err);
+//         alert("Sorry! Something went wrong.");
+//       })
+//     })
+// }
+
 
   render() {
 
     const {c, beginning, image5, height, navbarOpen, projectsArray, loaderOpen } = this.state;
     
-   
     if (beginning&&window.history.length<2) {
       return (
         <div className="loading-page">
@@ -199,6 +220,7 @@ firstLoading() {
         <div className="main">
             <NavBar navbarOpen={navbarOpen} onClick={() => this.isOpen()}/>
             <div className="projects">
+            <button onClick={e => this.handleSubmit(e)}>création des projets</button>
               <ul className="">
                 {projectsArray.map((project,index) => 
 
@@ -304,6 +326,7 @@ firstLoading() {
             <div>
             
               {/* <h1><a href="" ><i class="fab fa-instagram"></i> Instagram</a></h1> */}
+              <Link to="/project-creation">création des projets</Link>
             </div>
             </div>
             <div className={!this.state.hideFooter ? "footer-visible" : "hidden"}>
