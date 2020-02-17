@@ -7,6 +7,7 @@ import NotFound from './components/NotFound';
 import HomePage from './components/HomePage.js';
 import Project from './components/Project.js'
 import ProjectsForm from './components/ProjectsForm.js';
+import LoginForm from './components/LoginForm.js';
 
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
               <Route exact path='/' component={HomePage}/>
               <Route path="/notfound" component={ NotFound }/>
               <Route path="/project-creation" component={ ProjectsForm }/>
+              <Route exact path="/login" render={() => (<LoginForm currentUser={currentUser} onLogin={userDoc => this.setState({ currentUser: userDoc })}/> )}/>
               <Route exact path="/project/:projectId" component={ Project }/>
             </Switch>
       

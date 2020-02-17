@@ -132,21 +132,6 @@ firstLoading() {
   }
 }
 
-// handleSubmit() {
-  
-//   axios.post("http://localhost:4000/api/projects", this.state)
-//     .then(res => {
-//       console.log(res);
-//       this.setState({
-//         id: res.data._id
-//       })
-//     .catch(err => {
-//         console.log(err);
-//         alert("Sorry! Something went wrong.");
-//       })
-//     })
-// }
-
 
   render() {
 
@@ -220,7 +205,7 @@ firstLoading() {
         <div className="main">
             <NavBar navbarOpen={navbarOpen} onClick={() => this.isOpen()}/>
             <div className="projects">
-            <button onClick={e => this.handleSubmit(e)}>création des projets</button>
+            
               <ul className="">
                 {projectsArray.map((project,index) => 
 
@@ -326,7 +311,7 @@ firstLoading() {
             <div>
             
               {/* <h1><a href="" ><i class="fab fa-instagram"></i> Instagram</a></h1> */}
-              <Link to="/project-creation">création des projets</Link>
+              <Link to="/login">Login pour création des projets</Link>
             </div>
             </div>
             <div className={!this.state.hideFooter ? "footer-visible" : "hidden"}>
