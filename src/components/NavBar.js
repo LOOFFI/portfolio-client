@@ -35,16 +35,16 @@ class NavBar extends React.Component {
            <nav>
              <ul className="my-navbar-nav">
                <li className="my-nav-item" id="first-nav">
-                 <div className="hover-effect"><a className="nav-min" href="https://iron-proj2.herokuapp.com/posts" target="_blank" rel="noopener noreferrer">Premier Projet</a></div>
+                 <div className="hover-effect"><a className="nav-min" href="https://iron-proj2.herokuapp.com/posts" target="_blank" rel="noopener noreferrer">First Project</a></div>
                </li>
                <li className="my-nav-item" id="second-nav">
-                 <div className="hover-effect"><a className="nav-min" href="https://appnap.herokuapp.com/" target="_blank" rel="noopener noreferrer">Deuxième Projet</a></div>
+                 <div className="hover-effect"><a className="nav-min" href="https://appnap.herokuapp.com/" target="_blank" rel="noopener noreferrer">Second Project</a></div>
                </li>
                <li className="my-nav-item" id="third-nav">
-                 <div className="hover-effect"><a className="nav-min" href="https://la-vigne-heureuse.herokuapp.com/" target="_blank" rel="noopener noreferrer">Troisième Projet</a></div>
+                 <div className="hover-effect"><a className="nav-min" href="https://la-vigne-heureuse.herokuapp.com/" target="_blank" rel="noopener noreferrer">Third Project</a></div>
                </li>
                <li className="my-nav-item" id="fourth-nav">
-                 <div className="hover-effect"><a className="nav-min" href="https://la-vigne-heureuse.herokuapp.com/" target="_blank" rel="noopener noreferrer">Quatrième Projet</a></div>
+                 <div className="hover-effect"><a className="nav-min" href="https://la-vigne-heureuse.herokuapp.com/" target="_blank" rel="noopener noreferrer">Fourth Project</a></div>
                </li>
              </ul>
            </nav>

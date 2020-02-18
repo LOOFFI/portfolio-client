@@ -40,6 +40,14 @@ h1 {
   justify-content: center;
 }
 
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
 nav {
   width: 100vw;
   height: 100vh;
@@ -82,6 +90,13 @@ nav {
   & h1 {
     padding: 20px;
   }
+  & h2 {
+    padding: 10px;
+    color: $nav-open;
+  }
+  & p {
+    padding-left: 10px;
+  }
 }
 
 .parallax-bg-effect {
@@ -114,6 +129,14 @@ nav {
 @media #{$large-down} {
   #logo-to-home {
     display: none;
+  }
+}
+
+.to-login {
+  height: 30vh;
+  & a {
+    color: $main-color;
+    margin-left: 10px;
   }
 }
 

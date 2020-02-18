@@ -100,9 +100,11 @@ scrollTo(el) {
     arrowFixed: "arrow-fixed"
   })
   scroller.scrollTo( el , {
-    duration: 2000,
-    delay: 0,
-    smooth: 'easeInOutQuart'
+    duration: 3000,
+    delay: 100,
+    smooth: 'easeInOutQuart',
+    isDynamic: true,
+    ignoreCancelEvents: true
   })
 }
 
@@ -204,6 +206,7 @@ firstLoading() {
     return (
         <div className="main">
             <NavBar navbarOpen={navbarOpen} onClick={() => this.isOpen()}/>
+            <Element name="projects"/>
             <div className="projects">
             
               <ul className="">
@@ -268,8 +271,10 @@ firstLoading() {
             </div>
             
             </div>
+
+            <Element name='third-title'/>
             <div className="contact">
-            <Element name='third-title'><h1>CONTACT ME</h1></Element>
+            <h1>CONTACT ME</h1>
             <Parallax 
                 bgImage={image5} 
                 renderLayer={percentage => (
@@ -302,21 +307,25 @@ firstLoading() {
             
             </Parallax>
             </div>
-            <div className="text-container">
-            <Element name='fourth-title'><h1>About me</h1></Element>
-                <p>Mozzarella cheese strings who moved my cheese. Cheesy feet babybel pecorino boursin cut the cheese rubber cheese the big cheese pepper jack. Brie cheesy grin melted cheese melted cheese cheese and wine mozzarella queso danish fontina. Port-salut chalk and cheese stilton red leicester.</p>
-                <p>Cauliflower cheese melted cheese edam. Taleggio rubber cheese emmental st. agur blue cheese cauliflower cheese mascarpone croque monsieur cheesy grin. Red leicester mozzarella babybel fromage cottage cheese when the cheese comes out everybody's happy cheese on toast cheese slices. Bocconcini edam parmesan hard cheese parmesan croque monsieur roquefort say cheese. Gouda.</p>
-                <p>Cheese triangles port-salut edam. Rubber cheese smelly cheese mozzarella ricotta fondue mascarpone stinking bishop pepper jack. Paneer taleggio fromage frais danish fontina chalk and cheese cheese strings brie swiss. Paneer parmesan mozzarella brie smelly cheese cow squirty cheese bavarian bergkase. Paneer roquefort when the cheese comes out everybody's happy macaroni cheese.</p>
-                <p>Fondue parmesan cheese and wine. Manchego chalk and cheese babybel airedale croque monsieur queso everyone loves cheesy grin. Croque monsieur everyone loves queso gouda brie melted cheese macaroni cheese boursin. Melted cheese caerphilly cheese and wine camembert de normandie cheesy feet danish fontina.</p>
-            <div>
             
-              {/* <h1><a href="" ><i class="fab fa-instagram"></i> Instagram</a></h1> */}
-              <Link to="/login">Login pour création des projets</Link>
+              <Element name='fourth-title'><h1>About me</h1></Element>
+            <div className="text-container">
+              <h2>FULLSTACK DEVELOPMENT</h2>
+              <h2>REACT.JS / NODE.JS / MONGODB</h2>
+              <div className="mt-3">
+                <p>Fullstack developer for one year, I m based in Paris, France.</p>
+                <p>I studied economics and worked in luxury retail for 15 years. Loving web development, I decided to do it my job.</p>
+              </div>
             </div>
+            
+            <div className='to-login'>
+             <Link to="/login">Only for admin</Link>
             </div>
+
             <div className={!this.state.hideFooter ? "footer-visible" : "hidden"}>
               <Footer scrollTo={e => this.scrollTo(e)} scrollToTop={() => this.scrollToTop()}/>           
             </div>
+
         </div>   
     );
     }

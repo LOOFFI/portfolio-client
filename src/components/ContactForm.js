@@ -120,7 +120,7 @@ class ContactForm extends React.Component {
             onChange={this.handleCaptchaResponseChange}
           />
           </FormGroup>
-          <Button>Submit</Button>
+          <Button>Send</Button>
         
         </Form>
         </div>

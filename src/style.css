@@ -840,6 +840,14 @@ h1 {
   justify-content: center;
 }
 
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
 nav {
   width: 100vw;
   height: 100vh;
@@ -882,6 +890,13 @@ nav {
 .text-container h1 {
   padding: 20px;
 }
+.text-container h2 {
+  padding: 10px;
+  color: #2e2a28;
+}
+.text-container p {
+  padding-left: 10px;
+}
 
 .parallax-bg-effect {
   border-radius: 10px;
@@ -912,6 +927,13 @@ nav {
   #logo-to-home {
     display: none;
   }
+}
+.to-login {
+  height: 30vh;
+}
+.to-login a {
+  color: #a09c95;
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
