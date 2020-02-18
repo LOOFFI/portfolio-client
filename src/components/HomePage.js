@@ -47,6 +47,7 @@ class HomePage extends React.Component {
   this.scrollToBottom = this.scrollToBottom.bind(this);
   this.scrollTo = this.scrollTo.bind(this);
   this.firstLoading = this.firstLoading.bind(this);
+  this.scrollToBis = this.scrollToBis.bind(this);
 }
 
 componentDidMount() {
@@ -95,7 +96,18 @@ scrollToTop() {
   scroll.scrollToTop();
 }
 
-scrollTo(el) {
+scrollToBis(el) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(scroller.scrollTo(el,{
+        duration: 1200,
+        smooth: 'easeInOutQuart'
+      }))
+    }, 2000);
+  });
+}
+
+async scrollTo(el) {
   this.setState({
     arrowFixed: "arrow-fixed"
   })
@@ -106,6 +118,7 @@ scrollTo(el) {
     isDynamic: true,
     ignoreCancelEvents: true
   })
+  await this.scrollToBis(el)
 }
 
 isOpen(e) {
@@ -314,7 +327,7 @@ firstLoading() {
               <h2>REACT.JS / NODE.JS / MONGODB</h2>
               <div className="mt-3">
                 <p>Fullstack developer for one year, I m based in Paris, France.</p>
-                <p>I studied economics and worked in luxury retail for 15 years. Loving web development, I decided to do it my job.</p>
+                <p>I studied economics and worked in luxury retail for 15 years. Loving web development, I decided to make it my job.</p>
               </div>
             </div>
             
