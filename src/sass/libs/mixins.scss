@@ -31,3 +31,10 @@
   -webkit-animation: fadein $duration; /* Safari et Chrome */
   -o-animation: fadein $duration; /* Opera */
 }
+
+@mixin thefadeout($duration: 2s) {
+  animation: fadeout $duration;
+  -moz-animation: fadeout $duration; /* Firefox */
+  -webkit-animation: fadeout $duration; /* Safari et Chrome */
+  -o-animation: fadeout $duration; /* Opera */
+}
