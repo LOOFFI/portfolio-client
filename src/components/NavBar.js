@@ -9,7 +9,6 @@ class NavBar extends React.Component {
   
   
   handleClick(e) {
-    console.log(this.props);
     this.props.onClick(e.target.value);
   }
 

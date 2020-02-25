@@ -229,7 +229,7 @@ td, th {
 
 @media only screen and (max-width: 768px) {
   .menu-icon {
-    position: fixed;
+    position: absolute;
     top: 3vh;
     right: 3vw;
   }
