@@ -55,7 +55,7 @@ class ContactForm extends React.Component {
     event.preventDefault();
     console.log('envoi submit')
     this.handleChange();
-    axios.post("http://localhost:4000/api/contact", this.state)
+    axios.post(`${process.env.REACT_APP_API_URL}/api/contact`, this.state)
       .then(response => {
       // console.log(response);
       

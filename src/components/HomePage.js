@@ -23,12 +23,7 @@ class HomePage extends React.Component {
       c:0,
       count:0,
       image1 : "/public/logo.jpg",
-      image2 : "https://images.unsplash.com/photo-1477093782505-e10aaeb27c6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      image3 : "https://images.unsplash.com/photo-1474226004578-62743874270f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-      image4 : "https://images.unsplash.com/photo-1464638681273-0962e9b53566?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
       image5 : "https://images.unsplash.com/photo-1505051508008-923feaf90180?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-      image6 : "https://images.unsplash.com/photo-1526137630052-dc2c4693f0d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      image7 : "https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1834&q=80",
       height : 600,
       show : false,
       scrollPos : 0,
@@ -37,9 +32,9 @@ class HomePage extends React.Component {
       loaderOpen : false,
       hideFooter: false,
       id: null,
-      title: "coucou",
-      description: "coucou c'est la description",
-      link: "le link",
+      title: "",
+      description: "",
+      link: "",
       img: "https://images.unsplash.com/photo-1526137630052-dc2c4693f0d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
     }
   this.handleScroll = this.handleScroll.bind(this);
@@ -55,7 +50,7 @@ componentDidMount() {
  
   window.addEventListener("scroll", this.handleScroll);
  
-  axios.get("http://localhost:4000/api/projects")
+  axios.get(`${process.env.REACT_APP_API_URL}/api/projects`)
     .then(res => {
       console.log(res);
       this.setState({projectsArray: res.data})
@@ -267,8 +262,7 @@ firstLoading() {
                       strength={800}
                       bgImageAlt="bunch of grapes">
                         <div className='project-card' style={{height: '75vh'}}>
-                        {/* <Motion onClick={() => this.scrollTo('first-title')}></Motion> */}
-                          
+                       
                         </div>
                        
                   </Parallax></li> 
