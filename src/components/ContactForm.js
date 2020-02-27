@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from "react-router-dom";
 import ReCAPTCHA from 'react-google-recaptcha';
 import {Button,Form,Input,FormGroup, Label} from 'reactstrap'
 import axios from 'axios'
@@ -57,10 +56,10 @@ class ContactForm extends React.Component {
     this.handleChange();
     axios.post(`${process.env.REACT_APP_API_URL}/api/contact`, this.state)
       .then(response => {
-      // console.log(response);
+      
       
       if (response.data.msg === 'success') {
-        // alert("Votre message a bien été envoyé. Cliquez sur OK pour aller à l'accueil.");
+        
         this.setState(
           {isSubmitSuccess: true,
            contactFormOpen: false,
@@ -83,7 +82,7 @@ class ContactForm extends React.Component {
 
   render() { 
 
-    const {name,email,message,isSubmitSuccess,contactFormOpen,sitekey} = this.state;
+    const {name,email,message,contactFormOpen,sitekey} = this.state;
     
     if (!contactFormOpen) {
       return <Button onClick={e => this.showForm()}>Click here to contact me</Button>
