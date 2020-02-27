@@ -84,7 +84,7 @@ class ContactForm extends React.Component {
 
     const {name,email,message,contactFormOpen,sitekey} = this.state;
 
-    console.log(sitekey);
+    
     
     if (!contactFormOpen) {
       return <Button onClick={e => this.showForm()}>Click here to contact me</Button>
