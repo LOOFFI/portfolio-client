@@ -64,7 +64,7 @@ nav {
 }
 
 .projects {
-  margin: 10vh 1vw 10vh 35vw;
+  margin: 10vh 1vw 10vh 25vw;
   & .one-project {
     margin: 10vh 0;
   }
@@ -76,7 +76,7 @@ nav {
 
 @media #{$large-down} {
   .projects {
-    margin: 1vw;
+    margin: 2vh 1vw 2vh 25vw;
   }
 }
 
@@ -119,12 +119,17 @@ nav {
 
 .contact {
   height: 100vh;
+  overflow: hidden;
+  & h1 {
+    padding: 20px;
+  }
 }
 
 #logo-to-home {
   position: fixed;
   top: 10vh;
   right: 5vw;
+  z-index: 400;
 }
 @media #{$large-down} {
   #logo-to-home {
@@ -139,7 +144,6 @@ nav {
     margin-left: 10px;
   }
 }
-
 
 
 

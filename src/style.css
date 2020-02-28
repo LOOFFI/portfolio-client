@@ -62,7 +62,7 @@ td, th {
   -ms-flex-align: center;
   align-items: center;
   height: 100vh;
-  z-index: 200;
+  z-index: 100;
 }
 .motion .my-border {
   background-color: rgba(197, 189, 189, 0.1);
@@ -94,7 +94,7 @@ td, th {
   .my-navbar-nav {
     display: flex;
     flex-direction: column;
-    margin: 5vh 20vw;
+    margin: 0vh 20vw;
   }
 
   .my-nav-item {
@@ -816,6 +816,7 @@ a.nav-min:hover {
 }
 .project-title {
   color: #a09c95;
+  z-index: 200;
 }
 
 .title {
@@ -826,10 +827,12 @@ a.nav-min:hover {
 }
 
 .description {
+  margin-top: 20px;
+  margin-bottom: 50px;
   text-align: left;
   padding-left: 3vw;
 }
-.description > p, .description a {
+.description > p, .description a, .description h2 {
   font-size: 2em;
   color: #a09c95;
 }
@@ -842,7 +845,7 @@ a.nav-min:hover {
   .description {
     padding: 3vh;
   }
-  .description > p, .description a {
+  .description > p, .description a, .description h2 {
     font-size: 1.1rem;
   }
 }
@@ -850,7 +853,7 @@ a.nav-min:hover {
   position: absolute;
   top: 5vh;
   right: 5vw;
-  z-index: 300;
+  z-index: 400;
   color: #a09c95;
   font-size: 2rem;
 }
@@ -908,7 +911,7 @@ nav {
 }
 
 .projects {
-  margin: 10vh 1vw 10vh 35vw;
+  margin: 10vh 1vw 10vh 25vw;
 }
 .projects .one-project {
   margin: 10vh 0;
@@ -920,7 +923,7 @@ nav {
 
 @media only screen and (max-width: 1024px) {
   .projects {
-    margin: 1vw;
+    margin: 2vh 1vw 2vh 25vw;
   }
 }
 #project-title {
@@ -959,12 +962,17 @@ nav {
 }
 .contact {
   height: 100vh;
+  overflow: hidden;
+}
+.contact h1 {
+  padding: 20px;
 }
 
 #logo-to-home {
   position: fixed;
   top: 10vh;
   right: 5vw;
+  z-index: 400;
 }
 
 @media only screen and (max-width: 1024px) {

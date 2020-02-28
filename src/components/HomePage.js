@@ -24,18 +24,18 @@ class HomePage extends React.Component {
       count:0,
       image1 : "/public/logo.jpg",
       image5 : "https://images.unsplash.com/photo-1505051508008-923feaf90180?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+      img: "https://images.unsplash.com/photo-1526137630052-dc2c4693f0d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      scrollPos : 0,
       height : 600,
       show : false,
-      scrollPos : 0,
       navbarOpen : false,
-      projectsArray : [],
       loaderOpen : false,
       hideFooter: false,
+      projectsArray : [],
       id: null,
       title: "",
       description: "",
-      link: "",
-      img: "https://images.unsplash.com/photo-1526137630052-dc2c4693f0d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      link: ""
     }
   this.handleScroll = this.handleScroll.bind(this);
   this.scrollToTop = this.scrollToTop.bind(this);
@@ -45,6 +45,7 @@ class HomePage extends React.Component {
   this.scrollToBis = this.scrollToBis.bind(this);
 }
 
+
 componentDidMount() {
   this.interval = setInterval(() => this.firstLoading(),20);
  
@@ -52,14 +53,12 @@ componentDidMount() {
  
   axios.get(`${process.env.REACT_APP_API_URL}/api/projects`)
     .then(res => {
-      console.log(res);
       this.setState({projectsArray: res.data})
     })
     .catch(err => {
       console.log(err);
       alert("something wrong in the projects request")
     })
-  
 }
 
 componentWillUnmount() {
@@ -241,7 +240,7 @@ firstLoading() {
                               fontSize: '5em'
                               }}
                           />
-                          <div id='project-title'>
+                          <div className='project-title'>
                             
                           
                          <div style={{
@@ -249,7 +248,7 @@ firstLoading() {
                               top: "50%",
                               left: "50%",
                               transform: "translate(-50%,-50%)",
-                              fontSize: `${percentage * 4}rem`
+                              fontSize: window.innerWidth<700 ? `${percentage * 2}rem` : `${percentage * 4}rem`
                               }}
                          >
                            <span className="project-title">{project.title}</span>
@@ -261,8 +260,8 @@ firstLoading() {
                       blur={{min:-15, max:15}} 
                       strength={800}
                       bgImageAlt="bunch of grapes">
-                        <div className='project-card' style={{height: '75vh'}}>
-                       
+                        <div className='project-card' 
+                             style={{height: '38vw'}}>                    
                         </div>
                        
                   </Parallax></li> 
@@ -315,8 +314,8 @@ firstLoading() {
             </Parallax>
             </div>
             
-              <Element name='fourth-title'><h1>About me</h1></Element>
             <div className="text-container">
+              <Element name='fourth-title'><h1>About me</h1></Element>
               <h2>FULLSTACK DEVELOPMENT</h2>
               <h2>REACT.JS / NODE.JS / MONGODB</h2>
               <div className="mt-3">
