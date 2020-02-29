@@ -1,0 +1,53 @@
+.arrow-fixed {
+  position: fixed;
+  top: 40vh;
+  right: 50px;
+}
+
+.motion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  height: 100vh;
+  z-index: 100;
+
+  .my-border {
+    background-color: rgba($second-color, 0.1);
+    border-radius: 5px;
+    padding: 8px;
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 10px;
+    transition: background-color 2s;
+
+    &.my-border-up {
+      background-color: rgba($second-color, 0.7);
+    }
+
+    &:hover {
+      background-color: rgba($second-color, 0.9);
+    }
+
+    & > .fa-angle-down,
+    & > .fa-angle-up {
+      padding: 8px 18px 0px 26px;
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media #{$medium-down} {
+  .motion {
+    visibility: hidden;
+    height: 60vh;
+  }
+}

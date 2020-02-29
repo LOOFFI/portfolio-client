@@ -32,7 +32,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={HomePage}/>
               <Route path="/notfound" component={ NotFound }/>
-              <Route path="/project-creation" component={ ProjectsForm }/>
+              <Route path="/project-creation" render={() => (<ProjectsForm currentUser={currentUser}/> )} />
               <Route exact path="/login" render={() => (<LoginForm currentUser={currentUser} onLogin={userDoc => this.setState({ currentUser: userDoc })}/> )}/>
               <Route exact path="/project/:projectId" component={ Project }/>
             </Switch>

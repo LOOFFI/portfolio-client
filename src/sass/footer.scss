@@ -1,0 +1,91 @@
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  /* sur Safari et Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.footer-visible {
+  @include thefadein(1.5s);
+}
+
+
+
+
+.my-footer {
+  position: fixed;
+  background-color: $second-color;
+  height: 25vh;
+  width: 86vw;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+  color: $footer-font-color;  
+  
+}
+
+@media #{$large-down} {
+  .my-footer {
+    width: 100vw;
+  }
+}
+
+.links {
+  cursor: pointer;
+  & p {
+    font-size: 2rem;
+  }
+}
+
+@media #{$medium-down} {
+  .links {
+ 
+    & p, h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.hidden {
+  & .my-footer {
+    @include thefadeout(1.5s);
+    opacity: 0;
+  }
+}
+

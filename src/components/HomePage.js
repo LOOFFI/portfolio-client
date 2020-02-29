@@ -235,9 +235,10 @@ firstLoading() {
                               left: "50%",
                               top: "50%",                        
                               transform: "translate(-50%,-50%)",
-                              width: percentage * 1400,
-                              height: percentage * 1200,
+                              width: window.innerWidth<700 ? percentage*700 : percentage * 1400,
+                              height: window.innerWidth<700 ? percentage*600 : percentage * 1200,
                               fontSize: '5em'
+                              
                               }}
                           />
                           <div className='project-title'>

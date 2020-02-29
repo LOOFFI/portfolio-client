@@ -799,6 +799,11 @@ a.nav-min:hover {
   color: #651FFF;
 }
 
+.project-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .project-img {
   position: relative;
   z-index: -100;
@@ -806,14 +811,10 @@ a.nav-min:hover {
 .project-img img {
   position: absolute;
   width: 100%;
+  max-height: 100vh;
   z-index: -100;
 }
 
-@media only screen and (min-width: 1024px) {
-  .project-img img {
-    height: 100vh;
-  }
-}
 .project-title {
   color: #a09c95;
   z-index: 200;
@@ -827,14 +828,20 @@ a.nav-min:hover {
 }
 
 .description {
+  position: relative;
   margin-top: 20px;
   margin-bottom: 50px;
   text-align: left;
   padding-left: 3vw;
 }
-.description > p, .description a, .description h2 {
+.description > p, .description a {
   font-size: 2em;
   color: #a09c95;
+}
+.description h2 {
+  font-size: 2em;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -845,8 +852,13 @@ a.nav-min:hover {
   .description {
     padding: 3vh;
   }
-  .description > p, .description a, .description h2 {
-    font-size: 1.1rem;
+  .description > a {
+    font-size: 1.1em;
+  }
+  .description h2 {
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
 #dice-to-home {
@@ -923,7 +935,7 @@ nav {
 
 @media only screen and (max-width: 1024px) {
   .projects {
-    margin: 2vh 1vw 2vh 25vw;
+    margin: 2vh;
   }
 }
 #project-title {

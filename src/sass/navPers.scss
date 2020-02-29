@@ -1,0 +1,233 @@
+
+@media #{$medium-down} {
+  .my-navbar-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 0vh 20vw;
+  }
+  .my-nav-item {
+    margin-top: 0%;
+    padding: 0%;
+    margin: 2em;
+    @include rotate(-28deg);
+    width: 13em;
+  }
+  #main-title {
+    font-size: 7rem;
+  }
+}
+
+@media #{$medium-up} {
+  .my-navbar-nav {
+    z-index: 6;
+    margin: 10vh 50vh 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+  .my-nav-item {
+    margin-top: 0%;
+    padding: 0%;
+    @include rotate(-38deg);
+    width: 13em;
+  }
+}
+
+.menu-icon {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  @include transition;
+  animation: antirotation 0.1s;
+
+  & span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translateX(-50%) translateY(-50%));
+
+    display: block;
+    width: 22px;
+    height: 2px;
+
+    background-color: $main-color;
+
+    -webkit-transition: background 0.5s;
+
+    transition: background 0.5s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include translation(-6px);
+
+      display: block;
+      width: 22px;
+      height: 2px;
+
+      background-color: $main-color;
+
+      @include transition;
+    }
+
+    &::after {
+      @include translation(6px);
+    }
+  }
+
+  &:hover {
+    span::before {
+      @include translation(-8px);
+    }
+
+    span::after {
+      @include translation(8px);
+    }
+  }
+
+  &.is-opened {
+    animation: rotation 0.5s;
+
+    span {
+      background: transparent;
+    }
+
+    span::before {
+      @include rotation(0, 45deg);
+    }
+
+    span::after {
+      @include rotation(0, -45deg);
+    }
+  }
+}
+
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes antirotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+.open {
+  background-color: $nav-open;
+  height: 100%;
+  overflow: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75vh;
+  overflow: hidden;
+}
+
+@media #{$medium-down} {
+  .menu-icon {
+    position: absolute;
+    top: 3vh;
+    right: 3vw;
+  }
+  aside>.navbar {
+    height: 25vh;
+  }
+}
+
+.nav-min {
+  font-size: 1.5em;
+}
+
+.hover-effect {
+  width: 0%;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+  /* height:1px; */
+  /*override au cas par cas sur bottom et couleur de ligne*/
+  bottom: -0.5px;
+  border-bottom: 1.5px solid rgba($effect-color, 0.534);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    width: 100%;
+  }
+}
+
+a {
+  &.nav-min {
+    color: rgba($main-color, 0.534);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 1s ease-in-out;
+
+    &:hover {
+      color: $effect-color;
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  /* sur Safari et Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#first-nav {
+  @include thefadein(2.5s);
+}
+
+#second-nav {
+  @include thefadein(3.5s);
+}
+
+#third-nav {
+  @include thefadein(4.5s);
+}
+
+#fourth-nav {
+  @include thefadein(5.5s);
+}
+
+.item {
+  background-color: $card-bg;
+}
