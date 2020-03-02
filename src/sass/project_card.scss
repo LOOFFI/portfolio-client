@@ -16,24 +16,15 @@ $main-color: rgb(160, 156, 149);
   }
 }
 
-// @media #{$large-up} {
-//   .project-img {
-//     & img {
-//       maxheight: 100vh;
-//     }
-//   }
-// }
-
-
 
 .project-title {
   color: $main-color;
-  z-index: 200;
+  z-index: 800;
 }
 
 .title {
   position: absolute;
-  z-index: 300;
+  z-index: 900;
   font-size: 2rem;
   padding: 20vh 10vw;
 }

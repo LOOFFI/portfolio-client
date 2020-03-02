@@ -87,7 +87,7 @@ class ContactForm extends React.Component {
     
     
     if (!contactFormOpen) {
-      return <Button onClick={e => this.showForm()}>Click here to contact me</Button>
+      return <Button className="contact-open" onClick={e => this.showForm()}>Click here to contact me</Button>
     }
 
     
@@ -112,7 +112,7 @@ class ContactForm extends React.Component {
           </FormGroup>
           <FormGroup>
           <Label>MESSAGE</Label>
-          <Input type="textarea" rows="10" placeholder="message" onChange={(event) => this.updateMessage(event)} value={message}/>
+          <Input type="textarea" rows={`${window.innerWidth<700 ? 5 : 10}`} placeholder="message" onChange={(event) => this.updateMessage(event)} value={message}/>
           </FormGroup>
           <FormGroup>
           <ReCAPTCHA

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Parallax } from "react-parallax";
+import { Parallax, Background } from "react-parallax";
 import { Element , animateScroll as scroll, scroller } from 'react-scroll'
 import NavBar from './NavBar';
 import ContactForm from './ContactForm';
@@ -13,6 +13,7 @@ const insideStyles = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%,-50%)",
+  
 };
 
 class HomePage extends React.Component {
@@ -222,53 +223,44 @@ firstLoading() {
                 <Link to={`/project/${project._id}`} key={index}>
                   <li className="one-project" >
                     <Parallax 
-                      bgImage={project.img}
-                      bgImageSrcSet={`${project.img} 720w, ${project.img} 1120w`} 
-                      bgImageSizes='auto'
                       renderLayer={percentage => (
                         <div>
                           <div
                             className="parallax-bg-effect"
                             style={{
                               position: "absolute",
-                              background: `rgba(131, 88, 167, ${percentage * 0.8})`,
+                              background: `rgba(226, 226, 226, ${percentage * 0.6})`,
                               left: "50%",
                               top: "50%",                        
                               transform: "translate(-50%,-50%)",
                               width: window.innerWidth<700 ? percentage*700 : percentage * 1400,
                               height: window.innerWidth<700 ? percentage*600 : percentage * 1200,
-                              fontSize: '5em'
+                              fontSize: window.innerWidth<700 ? `${percentage * 2}rem` : `${percentage * 4}rem`
                               
                               }}
-                          />
-                          <div className='project-title'>
-                            
-                          
-                         <div style={{
-                              position: "absolute",
-                              top: "50%",
-                              left: "50%",
-                              transform: "translate(-50%,-50%)",
-                              fontSize: window.innerWidth<700 ? `${percentage * 2}rem` : `${percentage * 4}rem`
-                              }}
-                         >
-                           <span className="project-title">{project.title}</span>
-                         </div>
-                       </div>
-                        </div>
+                          >
+                             <span className="project-title title">{project.title}</span>
                          
+                          </div>
+                        </div>
                       )}
                       blur={{min:-15, max:15}} 
                       strength={800}
-                      bgImageAlt="bunch of grapes">
-                        <div className='project-card' 
-                             style={{height: '38vw'}}>                    
-                        </div>
-                       
-                  </Parallax></li> 
-                  </Link>
+                      >
+                
+                      <Background className="custom-bg">
+                        <img src="http://www.fillmurray.com/500/320" alt="fill murray" />
+                      </Background>
+                      <Background className="custom-bg">
+                        <img src={project.img} alt=""/>
+                      </Background>
+
+                  </Parallax>
+                 </li> 
+                </Link>
                 )}
               </ul>
+
            
             {/* Arrow to go to the top appears when user scrolls */}
             <div className={this.state.show ? "arrow-fixed" : "hidden"}>
@@ -287,7 +279,7 @@ firstLoading() {
                 renderLayer={percentage => (
                   <div>
                     <div
-                      className="parallax-bg-effect"
+                      // className="parallax-bg-effect"
                       style={{
                         position: "absolute",
                         background: `rgba(197, 189, 189, ${percentage * 0.4})`,
@@ -304,9 +296,9 @@ firstLoading() {
                 strength={800}
             >
             <span onClick={() => this.scrollTo('third-title')}>
-              <div style={{height}}>
+              <div id="contact-action" style={{height}}>
                 <div style={insideStyles}>
-                    <ContactForm loaderOpen={e => this.loaderOpen(e)} scrollToTop={this.scrollToTop} onClick={() => this.hideContact()}/>
+                    <ContactForm  loaderOpen={e => this.loaderOpen(e)} scrollToTop={this.scrollToTop} onClick={() => this.hideContact()}/>
                 </div>
       
               </div>

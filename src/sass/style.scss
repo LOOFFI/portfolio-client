@@ -101,6 +101,7 @@ nav {
 
 .parallax-bg-effect {
   border-radius: 10px;
+  z-index: 300;
 }
 
 
@@ -125,6 +126,14 @@ nav {
   }
 }
 
+#contact-action {
+  z-index: 2000000000000;
+}
+
+.contact-open {
+  z-index: 1500;
+}
+
 #logo-to-home {
   position: fixed;
   top: 10vh;
@@ -145,5 +154,7 @@ nav {
   }
 }
 
-
+.custom-bg {
+  z-index: -200;
+}
 

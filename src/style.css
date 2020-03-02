@@ -368,7 +368,7 @@ a.nav-min:hover {
   width: 86vw;
   bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: 600;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -817,12 +817,12 @@ a.nav-min:hover {
 
 .project-title {
   color: #a09c95;
-  z-index: 200;
+  z-index: 800;
 }
 
 .title {
   position: absolute;
-  z-index: 300;
+  z-index: 900;
   font-size: 2rem;
   padding: 20vh 10vw;
 }
@@ -959,6 +959,7 @@ nav {
 
 .parallax-bg-effect {
   border-radius: 10px;
+  z-index: 300;
 }
 
 .close-form {
@@ -980,6 +981,14 @@ nav {
   padding: 20px;
 }
 
+#contact-action {
+  z-index: 2000000000000;
+}
+
+.contact-open {
+  z-index: 1500;
+}
+
 #logo-to-home {
   position: fixed;
   top: 10vh;
@@ -998,6 +1007,10 @@ nav {
 .to-login a {
   color: #a09c95;
   margin-left: 10px;
+}
+
+.custom-bg {
+  z-index: -200;
 }
 
 /*# sourceMappingURL=style.css.map */
