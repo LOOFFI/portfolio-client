@@ -1,5 +1,5 @@
 
-@media #{$medium-down} {
+@media #{$large-down} {
   .my-navbar-nav {
     display: flex;
     flex-direction: column;
@@ -15,9 +15,12 @@
   #main-title {
     font-size: 7rem;
   }
+  aside>.navbar {
+    height: 25vh;
+  }
 }
 
-@media #{$medium-up} {
+@media #{$large-up} {
   .my-navbar-nav {
     z-index: 6;
     margin: 10vh 50vh 0 0;
@@ -148,9 +151,6 @@
     position: absolute;
     top: 3vh;
     right: 3vw;
-  }
-  aside>.navbar {
-    height: 25vh;
   }
 }
 

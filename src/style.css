@@ -84,13 +84,13 @@ td, th {
   font-size: 1.5em;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1030px) {
   .motion {
     visibility: hidden;
     height: 60vh;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1030px) {
   .my-navbar-nav {
     display: flex;
     flex-direction: column;
@@ -109,8 +109,12 @@ td, th {
   #main-title {
     font-size: 7rem;
   }
+
+  aside > .navbar {
+    height: 25vh;
+  }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1030px) {
   .my-navbar-nav {
     z-index: 6;
     margin: 10vh 50vh 0 0;
@@ -232,10 +236,6 @@ td, th {
     position: absolute;
     top: 3vh;
     right: 3vw;
-  }
-
-  aside > .navbar {
-    height: 25vh;
   }
 }
 .nav-min {
@@ -376,7 +376,7 @@ a.nav-min:hover {
   color: #686560;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1030px) {
   .my-footer {
     width: 100vw;
   }
@@ -870,7 +870,7 @@ a.nav-min:hover {
   font-size: 2rem;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1030px) {
   #dice-to-home {
     display: none;
   }
@@ -888,7 +888,7 @@ html {
   color: #a09c95;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1030px) {
   body, html {
     margin-right: 0;
   }
@@ -933,7 +933,7 @@ nav {
   left: 100%;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1030px) {
   .projects {
     margin: 2vh;
   }
@@ -996,7 +996,7 @@ nav {
   z-index: 400;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1030px) {
   #logo-to-home {
     display: none;
   }

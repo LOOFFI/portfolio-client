@@ -279,8 +279,7 @@ firstLoading() {
                 renderLayer={percentage => (
                   <div>
                     <div
-                      // className="parallax-bg-effect"
-                      style={{
+                       style={{
                         position: "absolute",
                         background: `rgba(197, 189, 189, ${percentage * 0.4})`,
                         left: "50%",

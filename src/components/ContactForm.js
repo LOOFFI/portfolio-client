@@ -97,22 +97,22 @@ class ContactForm extends React.Component {
         
         <div className="container my-5 mx-auto">
           <div className="close-form" onClick={e => this.showForm()}>
-            <span ><i class="far fa-times-circle"></i></span>
+            <span ><i className="far fa-times-circle"></i></span>
           </div>
         <Form onSubmit={event => this.handleSubmit(event)}>
 
           
           <FormGroup>
           <Label>NAME</Label>
-          <Input type="text" placeholder="name" onChange={(event) => this.updateName(event)} value={name}/>
+          <Input type="text" placeholder="name" onChange={(event) => this.updateName(event)} value={name} required/>
           </FormGroup>
           <FormGroup>
           <Label>EMAIL</Label>
-          <Input type="email" placeholder="email" onChange={(event) => this.updateEmail(event)} value={email}/>
+          <Input type="email" placeholder="email" onChange={(event) => this.updateEmail(event)} value={email} required/>
           </FormGroup>
           <FormGroup>
           <Label>MESSAGE</Label>
-          <Input type="textarea" rows={`${window.innerWidth<700 ? 5 : 10}`} placeholder="message" onChange={(event) => this.updateMessage(event)} value={message}/>
+          <Input type="textarea" rows={`${window.innerWidth<700 ? 5 : 10}`} placeholder="message" onChange={(event) => this.updateMessage(event)} value={message} required/>
           </FormGroup>
           <FormGroup>
           <ReCAPTCHA

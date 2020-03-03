@@ -16,8 +16,21 @@ class ProjectForm extends React.Component {
       img_large:"",
       description: "",
       isSubmitSuccess: false,
-      currentUser: this.props.currentUser
+      currentUser: this.props.currentUser,
+      showForm: false,
+      projectsArray: []
      }
+  }
+
+  componentDidMount() {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/projects`)
+    .then(res => {
+      this.setState({projectsArray: res.data})
+    })
+    .catch(err => {
+      console.log(err);
+      alert("something wrong in the projects request")
+    })
   }
 
   handleChange(event) {
@@ -54,7 +67,7 @@ class ProjectForm extends React.Component {
 
   render() { 
 
-    const {isSubmitSuccess, currentUser} = this.state;
+    const {isSubmitSuccess, currentUser, showForm, projectsArray} = this.state;
 
     if (isSubmitSuccess) {
       return (
@@ -68,6 +81,7 @@ class ProjectForm extends React.Component {
       )
     }
 
+    if (showForm) {
     return ( 
       <div className="container mt-5">
 
@@ -125,6 +139,32 @@ class ProjectForm extends React.Component {
 
     </div>
      );
+    }
+    return (
+      <div className="container mt-3">
+
+        <Link id='logo-to-home' to='/'><img src="../../logoPT.jpg" alt="logo"/></Link>
+        <Link id='dice-to-home' to='/'><i className="fas fa-dice"></i></Link>
+
+        <h1>Project list</h1>
+        
+        <div className="container my-3">
+          <ul>
+            {projectsArray.map((project,index) => 
+              <li key={index}>
+                <div className="jumbotron">
+                  <h2>{project.title}</h2>
+                  {/* <a href="#" className="btn btn-link" role="button">Edit</a> */}
+                </div>
+              </li>
+            )}
+          </ul>
+          <div>
+            <button type="button" className="btn btn-secondary" onClick={() => this.setState({showForm: true})}>Create a new project</button>
+          </div>
+        </div>
+      </div>
+    )
   }
 }
  
