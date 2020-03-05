@@ -38,6 +38,7 @@ class ProjectForm extends React.Component {
 
   handleChange(event) {
     const { value } = event.target;
+    console.log('value : ',value);
     this.setState({ [event.target.name] : value });
   }
 
@@ -53,6 +54,12 @@ class ProjectForm extends React.Component {
       .then(res => {
         this.setState({
           project: res.data,
+          id: res.data._id,
+          title: res.data.title,
+          img: res.data.img,
+          img_large: res.data.img_large,
+          link: res.data.link,
+          description: res.data.description,
           edit: true,
           showForm: true
         })
@@ -101,7 +108,7 @@ class ProjectForm extends React.Component {
 
   render() { 
 
-    const {isSubmitSuccess, currentUser, showForm, edit, projectsArray, project} = this.state;
+    const {isSubmitSuccess, currentUser, showForm, edit, projectsArray, project, title, link, img, img_large, description} = this.state;
 
     if (isSubmitSuccess) {
       return (
@@ -129,29 +136,29 @@ class ProjectForm extends React.Component {
             <div className="container mx-auto my-5">
               <div className="form-group">
                 <label htmlFor="title">TITLE</label>
-                <input className="form-control" onChange={(event) => this.handleChange(event)} id="title" type="text" name="title" placeholder={project.title}/>
+                <input className="form-control" onChange={(event) => this.handleChange(event)} id="title" type="text" name="title"  value={title}/>
               </div>
   
               <div className="form-group">
                 <label htmlFor="image">IMAGE URL</label>
-                <input className="form-control" onChange={(event) => this.handleChange(event)} id="image" type="text" name="img" placeholder={project.img}/>
+                <input className="form-control" onChange={(event) => this.handleChange(event)} id="image" type="text" name="img" value={img}/>
               </div>
   
               <div className="form-group">
                 <label htmlFor="image">LARGE IMAGE URL</label>
-                <input className="form-control" onChange={(event) => this.handleChange(event)} id="image" type="text" name="img_large" placeholder={project.img_large}/>
+                <input className="form-control" onChange={(event) => this.handleChange(event)} id="image" type="text" name="img_large" value={img_large}/>
               </div>
   
               <div className="form-group">
                 <label htmlFor="link">LINK URL</label>
-                <input className="form-control" onChange={(event) => this.handleChange(event)} id="link" type="text" name="link" placeholder={project.link}/>
+                <input className="form-control" onChange={(event) => this.handleChange(event)} id="link" type="text" name="link" value={link}/>
               </div>
   
               <div className="form-group">
                 <label htmlFor="description">DESCRIPTION</label>
                 <CKEditor 
                     editor={ ClassicEditor } 
-                    data={project.description}
+                    data={description}
                     onInit={ editor => {
                          console.log( 'Editor is ready to use!', editor );
                           } }
