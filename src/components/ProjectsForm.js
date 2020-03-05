@@ -38,13 +38,10 @@ class ProjectForm extends React.Component {
 
   handleChange(event) {
     const { value } = event.target;
-    console.log('value : ',value);
     this.setState({ [event.target.name] : value });
   }
 
   handleChangeContent(data) {
-    
-    console.log("data",data)
     this.setState({ description : data})
   }
 
@@ -77,7 +74,7 @@ class ProjectForm extends React.Component {
     
     axios.post(`${process.env.REACT_APP_API_URL}/api/projects`, this.state)
         .then(res => {
-          console.log(res.data._id);
+          
           this.setState({
             id: res.data._id,
             isSubmitSuccess: true
